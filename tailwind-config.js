@@ -11,7 +11,7 @@ tailwind.config = {
         txtprimarydark: "#E6D8C3",
         txtsecondary: "#7D5A45",
         txtsecondarydark: "#C0A78A",
-        headerfooter: "#4A2E1E",
+        headerfooter: "#e5e7eb",
         headerfooterdark: "#222222",
       },
     },

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DecoraHub</title>
+    <title>Auth</title>
     <script src="tailwind-config.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,6 +17,15 @@
       }
       function darkTh() {
         document.getElementById("da-li").classList.toggle("dark");
+      }
+      function showLogin() {
+        document.getElementById("loginForm").classList.remove("hidden");
+        document.getElementById("registerForm").classList.add("hidden");
+      }
+
+      function showRegister() {
+        document.getElementById("registerForm").classList.remove("hidden");
+        document.getElementById("loginForm").classList.add("hidden");
       }
     </script>
   </head>
@@ -108,7 +117,10 @@
                 href="#"
                 class="fa-solid fa-cart-shopping hover:text-secondary"
               ></a>
-              <a href="#" class="fa-solid fa-user hover:text-secondary"></a>
+              <a
+                href="auth.html"
+                class="fa-solid fa-user hover:text-secondary"
+              ></a>
               <span
                 class="fa-solid fa-bars cursor-pointer"
                 onclick="toggleNav()"
@@ -142,9 +154,131 @@
       </div>
     </header>
     <main>
-      <section class="h-screen bg-blue-500 text-gray-100">Section 1</section>
-      <section class="h-screen bg-blue-800 text-gray-100">Section 2</section>
-      <section class="h-screen bg-blue-700 text-gray-100">Section 3</section>
+      <section class="bg-primary dark:bg-bgdark">
+        <div class="container mx-auto py-3 px-4">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="hidden md:flex w-2/3 items-center justify-center p-4">
+              <img
+                src="assets/images/auth-side-img.jpeg"
+                alt="Furniture Display"
+                class="rounded-xl shadow-2xl object-cover h-[450px] w-full scale-x-[-1]"
+              />
+            </div>
+
+            <div
+              class="w-full md:w-1/3 dark:text-gray-100 bg-gray-300 dark:bg-gray-800 rounded-xl"
+            >
+              <!-- this is for login and regestration div -->
+
+              <div class="hidden" id="registerForm">
+                <!-- registeration -->
+                <form action="" class="border-2 p-4 rounded-lg">
+                  <h3 class="text-center text-2xl">Register</h3>
+                  <div class="grid gap-4">
+                    <label for="name"
+                      >Name<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <label for="email"
+                      >Email<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <label for="password"
+                      >Password<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <label for="cpassword"
+                      >Confirm password<span class="text-red-500"
+                        >*</span
+                      ></label
+                    >
+                    <input
+                      type="password"
+                      name="cpassword"
+                      id="cpassword"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <span
+                      ><input type="checkbox" name="toc" id="toc" /><label
+                        for="toc"
+                        class="rounded-xl p-4"
+                        >I agree to<a href="#"> Terms and Conditions</a
+                        ><span class="text-red-500">*</span></label
+                      ></span
+                    >
+                    <span class="text-blue-500 text-right"
+                      ><input
+                        type="button"
+                        onclick="showLogin()"
+                        value=" I have account, Login"
+                        class="cursor-pointer"
+                      />
+                    </span>
+                    <input
+                      type="submit"
+                      value="Register"
+                      class="bg-primary p-2 rounded-xl"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div id="loginForm" class="">
+                <!-- login -->
+                <form action="" class="border-2 p-4 rounded-lg">
+                  <h3 class="text-center text-2xl">Login</h3>
+                  <div class="grid gap-4">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      class="rounded-xl p-2 text-gray-900"
+                    />
+                    <div class="text-blue-500 flex flex-wrap w-full">
+                      <a href="" class="whitespace-nowrap mr-auto"
+                        >Forget Password</a
+                      >
+                      <span
+                        onclick="showRegister()"
+                        class="cursor-pointer whitespace-nowrap ml-auto"
+                      >
+                        I don't have account, Register</span
+                      >
+                    </div>
+                    <input
+                      type="submit"
+                      value="Login"
+                      class="bg-primary p-2 rounded-xl text-gray-100"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer starts here -->
     <footer

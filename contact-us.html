@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DecoraHub</title>
+    <script src="tailwind-config.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script>
+        function toggleNav() {
+            document.getElementById("mobNav").classList.toggle("hidden");
+        }
+        function darkTh() {
+            document.getElementById("da-li").classList.toggle("dark");
+        }
+    </script>
+</head>
+
+<body class="" id="da-li">
+    <div class="text-center text-white bg-green-900 py-2 dark:bg-green-500 dark:text-black">
+        !! 🚧 Site under construction. Check back soon! 🔨 !!
+    </div>
+    <header class="sticky top-0 z-10 bg-headerfooter dark:bg-headerfooterdark dark:text-gray-100 shadow-lg">
+        <div class="container mx-auto py-4">
+            <!-- This is for large screen view -->
+            <div class="md:flex hidden justify-between px-4">
+                <h1 class="text-2xl font-semibold hover:text-secondary">
+                    <a href="index.html">DecoraHub</a>
+                </h1>
+                <nav class="hidden md:block">
+                    <ul class="flex gap-5 font-medium text-lg">
+                        <li>
+                            <a href="index.html" class="hover:text-secondary hover:underline">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-secondary hover:underline">About</a>
+                        </li>
+                        <li>
+                            <a href="shop.html" class="hover:text-secondary hover:underline">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#blogs" class="hover:text-secondary hover:underline">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html" class="hover:text-secondary hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="relative w-64">
+                    <input type="search" class="rounded-lg p-2 w-full bg-gray-300 dark:bg-headerfooter text-gray-900"
+                        placeholder="Search Products" />
+                    <button
+                        class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-300"></button>
+                </div>
+                <div class="flex gap-5 p-2">
+                    <a href="#" class="fa-solid fa-moon cursor-pointer hover:text-secondary" onclick="darkTh()"></a>
+                    <a href="#" class="fa-solid fa-cart-shopping hover:text-secondary"></a>
+                    <a href="auth.html" class="fa-solid fa-user hover:text-secondary"></a>
+                </div>
+            </div>
+            <!-- This is for mobile view -->
+            <div class="md:hidden p-2">
+                <div class="flex justify-between px-4 py-1 items-center">
+                    <h1 class="text-2xl font-semibold hover:text-secondary">
+                        <a href="index.html">DecoraHub</a>
+                    </h1>
+                    <div class="flex gap-5">
+                        <a href="#" class="fa-solid fa-moon hover:text-secondary" onclick="darkTh()"></a>
+                        <a href="#" class="fa-solid fa-cart-shopping hover:text-secondary"></a>
+                        <a href="#" class="fa-solid fa-user hover:text-secondary"></a>
+                        <span class="fa-solid fa-bars cursor-pointer" onclick="toggleNav()"></span>
+                    </div>
+                </div>
+                <div class="p-2 relative">
+                    <input type="search" class="rounded-lg p-2 w-full bg-gray-300 dark:bg-headerfooter text-gray-900"
+                        placeholder="Search Product " />
+                    <button
+                        class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-300"></button>
+                </div>
+                <nav class="hidden" id="mobNav">
+                    <ul class="grid gap-8 text-center bg-bglight dark:bg-gray-800">
+                        <li>
+                            <a href="index.html" class="hover:text-secondary">Home</a>
+                        </li>
+                        <li><a href="#about" class="hover:text-secondary">About</a></li>
+                        <li><a href="shop.html" class="hover:text-secondary">Shop</a></li>
+                        <li><a href="#blogs" class="hover:text-secondary">Blogs</a></li>
+                        <li>
+                            <a href="contact-us.html" class="hover:text-secondary">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- CONTACT PAGE -->
+        <div
+            class="bg-white dark:bg-headerfooterdark dark:text-gray-100  min-h-screen py-12 px-6 md:px-16 lg:px-32 flex flex-col lg:flex-row gap-12">
+
+            <!-- Left Section contact information-->
+            <div class="lg:w-1/2 space-y-6 ">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100">Get in Touch</h1>
+                <p class="text-lg text-gray-700 dark:text-gray-100">
+                    We'd love to hear from you. Here's how you can reach us.
+                </p>
+
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Visit our office</h2>
+                    <p class="text-blue-600 font-medium">DecoraHub</p>
+                    <p>Kalanki-14 Kathmandu, Bagmati | Nepal</p>
+                    <p>
+                        Email:
+                        <a href="mailto:info@dojangtaekwondo.org" class="text-blue-600">
+                            Decorahub999@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">CEO</h2>
+                    <p class="text-blue-600 font-medium">Mr. Sameer Maharjan</p>
+                    <p>Tel. +977 9087865456</p>
+                    <p>Fax. +977 9800007676</p>
+                    <p>
+                        Email:
+                        <a href="mailto:info@dojangtaekwondo.org" class="text-blue-600">
+                            sameermarjan789@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Section - Contact Form  -->
+            <div class="lg:w-1/2 bg-white p-6 rounded-2xl shadow-lg dark:text-gray-100 dark:bg-headerfooterdark">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4 dark:text-gray-100">Send a message</h2>
+
+
+                <!-- <div id="message-status" class="hidden mb-4 p-3 rounded-lg"></div> -->
+
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-headerfooterdark"
+                            placeholder="Full name" required />
+
+                        <input type="email"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-headerfooterdark"
+                            placeholder="Email address" required />
+                    </div>
+
+                    <input type="text"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-headerfooterdark"
+                        placeholder="Subject" required />
+
+                    <textarea rows="5"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-headerfooterdark"
+                        placeholder="Your message" required></textarea>
+
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" class="w-4 h-4" required />
+                        <label class="text-gray-700">
+                            I accept the <a href="#" class="text-blue-600 font-medium">Privacy Policy</a> of this site.
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <!-- Footer starts here -->
+    <footer class="bg-headerfooter dark:bg-headerfooterdark dark:text-gray-100" id="about">
+        <div class="container mx-auto px-4 py-4">
+            <div class="grid gap-4 md:grid-cols-4 pb-8">
+                <div>
+                    <h3 class="text-xl">DecoraHub</h3>
+                    <p class="text-left">
+                        Your one-stop destination for stylish, quality furniture that
+                        transforms any space into a masterpiece.
+                    </p>
+                    <div class="py-4">
+                        <i class="fa-brands fa-facebook fa-xl"></i>
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                        <i class="fa-brands fa-x-twitter fa-xl"></i>
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">Quick link</h3>
+                    <div class="grid">
+                        <a href="index.html">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#product">Shop</a>
+                        <a href="#blogs">Blogs</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">Customer Service</h3>
+                    <div class="grid">
+                        <a href="#about">FAQs</a>
+                        <a href="#about">Privacy Policy</a>
+                        <a href="#about">Terms and condition</a>
+                        <a href="#about">Support center</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">We accept</h3>
+                    <div class="text-3xl">
+                        <i class="fa-brands fa-cc-visa text-blue-600 bg-white"></i>
+                        <i class="fa-brands fa-cc-mastercard text-red-600 bg-white"></i>
+                        <i class="fa-brands fa-cc-apple-pay"></i>
+                        <i class="fa-solid fa-building-columns text-yellow-700 bg-white"></i>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-black h-1 dark:bg-gray-100" />
+            <div>
+                <p class="text-center text-lg">
+                    &copy;2025 DecoraHub All right reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -77,11 +77,10 @@
             ></button>
           </div>
           <div class="flex gap-5 p-2">
-            <a
-              href="#"
+            <span
               class="fa-solid fa-moon cursor-pointer hover:text-secondary"
               onclick="darkTh()"
-            ></a>
+            ></span>
             <a
               href="#"
               class="fa-solid fa-cart-shopping hover:text-secondary"
@@ -99,16 +98,18 @@
               <a href="index.html">DecoraHub</a>
             </h1>
             <div class="flex gap-5">
-              <a
-                href="#"
-                class="fa-solid fa-moon hover:text-secondary"
+              <span
+                class="fa-solid fa-moon hover:text-secondary cursor-pointer"
                 onclick="darkTh()"
-              ></a>
+              ></span>
               <a
                 href="#"
                 class="fa-solid fa-cart-shopping hover:text-secondary"
               ></a>
-              <a href="#" class="fa-solid fa-user hover:text-secondary"></a>
+              <a
+                href="auth.html"
+                class="fa-solid fa-user hover:text-secondary"
+              ></a>
               <span
                 class="fa-solid fa-bars cursor-pointer"
                 onclick="toggleNav()"
@@ -142,9 +143,378 @@
       </div>
     </header>
     <main>
-      <section class="h-screen bg-blue-500 text-gray-100">Section 1</section>
-      <section class="h-screen bg-blue-800 text-gray-100">Section 2</section>
-      <section class="h-screen bg-blue-700 text-gray-100">Section 3</section>
+      <!-- hero section -->
+      <section
+        class="md:h-[80vh] h-[70vh] md:bg-[url(assets/images/hero-img-lg-light.png)] bg-[url(assets/images/hero-img-sm-light.png)] dark:bg-[url(assets/images/hero-img-sm-dark.png)] md:dark:bg-[url(assets/images/hero-img-lg-dark.png)] text-txtprimary dark:text-txtprimarydark flex items-center"
+      >
+        <div
+          class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+        >
+          <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Premium Furniture for Your Home
+            </h1>
+            <p
+              class="text-lg md:text-xl mb-6 md:text-txtsecondary text-black dark:text-bglight"
+            >
+              Discover stylish, high-quality furniture that transforms your
+              space.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#products"
+                class="px-6 py-3 bg-primary text-bglight rounded-lg shadow-lg hover:bg-primary/90 transition dark:bg-secondary dark:text-bglight dark:hover:bg-secondary/80"
+              >
+                Shop Now
+              </a>
+              <a
+                href="#categories"
+                class="px-6 py-3 bg-primary text-bglight rounded-lg shadow-lg hover:bg-primary/90 transition dark:bg-secondary dark:text-bglight dark:hover:bg-secondary/80"
+              >
+                Explore Categories
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- hot product section -->
+      <section class="bg-bglight dark:bg-bgdark pt-12">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl font-bold text-txtprimary dark:text-txtprimarydark pb-8"
+          >
+            Hot Picks
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-1.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Modern Bookcase Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  premium Duco-coated compressed board.
+                </p>
+
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$150&nbsp;</span>$137.22</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-2.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Bed with Storage
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium solid wood & smooth finish hello.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$350&nbsp;</span>$318.80</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-3.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Large Conference Table
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  High-grade laminated compressed board.
+                </p>
+
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$225</span>&nbsp;$200</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-4.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Premium Upholstered Sofa
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium Handmade with smooth finish.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$400&nbsp;</span>$381.18</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- single highlited poster -->
+      <section class="bg-bglight dark:bg-bgdark py-12">
+        <div class="container mx-auto px-4">
+          <div
+            class="flex justify-center rounded-2xl overflow-hidden shadow-lg"
+          >
+            <img
+              src="assets/images/poster-1.png"
+              alt="Image not found"
+              class="object-cover rounded-2xl md:w-[80vw] w-full"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- recemeneded to you section -->
+      <section class="bg-bglight dark:bg-bgdark py-12">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl font-bold text-txtprimary dark:text-txtprimarydark pb-8"
+          >
+            Recommended For You
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-1.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Floating Wooden Bed
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Made From Rose Wood.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$600&nbsp;</span>$519.78</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-2.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  ZigZagCube Table Bookshelf
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Handcrafted From Premium Wood.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$6&nbsp;</span>$4.85</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-3.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Gorkha Organizer Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium solid wood & smooth finish.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$150&nbsp;</span>$131.68</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-4.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Minimal Bookshelf Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  melamine-coated particle board.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$160&nbsp;</span>$142.07</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- why choose us section -->
+      <section
+        class="bg-bglight dark:bg-bgdark text-txtprimary dark:text-txtprimarydark"
+      >
+        <div class="container mx-auto px-4 py-12">
+          <h1 class="text-center text-4xl font-bold pb-8">Why Buy From Us</h1>
+
+          <div class="grid md:grid-cols-3 grid-cols-1 gap-8 px-4 md:px-12">
+            <div
+              class="rounded-3xl p-10 border-2 border-primary dark:border-secondary bg-gradient-to-br from-secondary/20 to-bglight dark:from-bgdark dark:to-secondary/20 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            >
+              <i
+                class="fa-regular fa-credit-card text-primary dark:text-secondary fa-2xl"
+              ></i>
+
+              <h3 class="py-4 text-xl font-semibold">Secure Payment</h3>
+
+              <p class="text-txtsecondary dark:text-txtsecondarydark">
+                Fast, safe, and secure payments available.
+              </p>
+            </div>
+            <div
+              class="rounded-3xl p-10 border-2 border-primary dark:border-secondary bg-gradient-to-br from-secondary/20 to-bglight dark:from-bgdark dark:to-secondary/20 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            >
+              <i
+                class="fa-solid fa-truck-fast text-primary dark:text-secondary fa-2xl"
+              ></i>
+
+              <h3 class="py-4 text-xl font-semibold">Fast Delivery</h3>
+
+              <p class="text-txtsecondary dark:text-txtsecondarydark">
+                Product delivered in under 24 hours.
+              </p>
+            </div>
+            <div
+              class="rounded-3xl p-10 border-2 border-primary dark:border-secondary bg-gradient-to-br from-secondary/20 to-bglight dark:from-bgdark dark:to-secondary/20 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            >
+              <i
+                class="fa-solid fa-headset text-primary dark:text-secondary fa-2xl"
+              ></i>
+
+              <h3 class="py-4 text-xl font-semibold">24/7 Support</h3>
+
+              <p class="text-txtsecondary dark:text-txtsecondarydark">
+                Get support anytime with our 24/7 team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Subscribe email section -->
+      <section
+        class="bg-secondary/40 dark:bg-[#2A241E] text-txtprimary dark:text-txtprimarydark py-14"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="text-center md:text-left">
+              <h3
+                class="text-3xl font-bold tracking-tight text-primary dark:text-txtprimarydark"
+              >
+                Get More Updates From Us
+              </h3>
+              <p class="mt-1 text-txtsecondary dark:text-txtsecondarydark">
+                Stay informed with our latest offers and announcements.
+              </p>
+            </div>
+            <div
+              class="flex items-center w-full md:w-auto justify-center mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-4 py-2 w-full md:w-64 rounded-l-xl border border-primary/40 dark:border-secondary/40 bg-[#FBF8F2] dark:bg-[#1F1B17] text-txtprimary dark:text-txtprimarydark placeholder-txtsecondary dark:placeholder-txtsecondarydark focus:outline-none focus:ring-2 focus:ring-primary/60 shadow-sm"
+              />
+
+              <button
+                class="px-6 py-2 rounded-r-xl font-medium bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer starts here -->
     <footer

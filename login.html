@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auth</title>
+    <title>DecoraHub | login</title>
     <script src="tailwind-config.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,15 +17,6 @@
       }
       function darkTh() {
         document.getElementById("da-li").classList.toggle("dark");
-      }
-      function showLogin() {
-        document.getElementById("loginForm").classList.remove("hidden");
-        document.getElementById("registerForm").classList.add("hidden");
-      }
-
-      function showRegister() {
-        document.getElementById("registerForm").classList.remove("hidden");
-        document.getElementById("loginForm").classList.add("hidden");
       }
     </script>
   </head>
@@ -96,7 +87,7 @@
               class="fa-solid fa-cart-shopping hover:text-secondary"
             ></a>
             <a
-              href="auth.html"
+              href="login.html"
               class="fa-solid fa-user hover:text-secondary"
             ></a>
           </div>
@@ -154,129 +145,67 @@
       </div>
     </header>
     <main>
-      <section class="bg-primary dark:bg-bgdark">
-        <div class="container mx-auto py-3 px-4">
-          <div class="flex flex-col md:flex-row items-center">
-            <div class="hidden md:flex w-2/3 items-center justify-center p-4">
-              <img
-                src="assets/images/auth-side-img.jpeg"
-                alt="Furniture Display"
-                class="rounded-xl shadow-2xl object-cover h-[450px] w-full scale-x-[-1]"
+      <section
+        class="flex justify-center items-center min-h-[80vh] px-4 py-12 text-txtprimary dark:text-txtprimarydark bg-bglight dark:bg-bgdark/90"
+      >
+        <div
+          class="w-full max-w-md bg-white dark:bg-[#1E1B19] p-8 rounded-2xl shadow-lg border border-primary/10 dark:border-secondary/20"
+        >
+          <h2 class="text-3xl font-bold text-center mb-6">Welcome Back</h2>
+          <p
+            class="text-center text-txtsecondary dark:text-txtsecondarydark mb-6"
+          >
+            Login to access your account
+          </p>
+
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium mb-1">Email</label>
+              <input
+                type="email"
+                class="w-full px-4 py-2 rounded-xl border border-primary/40 dark:border-secondary/40 bg-bglight dark:bg-[#1F1B17] text-txtprimary dark:text-txtprimarydark focus:outline-none focus:ring-2 focus:ring-primary/70"
+                placeholder="Enter your email"
+                required
               />
             </div>
 
-            <div
-              class="w-full md:w-1/3 dark:text-gray-100 bg-gray-300 dark:bg-gray-800 rounded-xl"
-            >
-              <!-- this is for login and regestration div -->
-
-              <div class="hidden" id="registerForm">
-                <!-- registeration -->
-                <form action="" class="border-2 p-4 rounded-lg">
-                  <h3 class="text-center text-2xl">Register</h3>
-                  <div class="grid gap-4">
-                    <label for="name"
-                      >Name<span class="text-red-500">*</span></label
-                    >
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <label for="email"
-                      >Email<span class="text-red-500">*</span></label
-                    >
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <label for="password"
-                      >Password<span class="text-red-500">*</span></label
-                    >
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <label for="cpassword"
-                      >Confirm password<span class="text-red-500"
-                        >*</span
-                      ></label
-                    >
-                    <input
-                      type="password"
-                      name="cpassword"
-                      id="cpassword"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <span
-                      ><input type="checkbox" name="toc" id="toc" /><label
-                        for="toc"
-                        class="rounded-xl p-4"
-                        >I agree to<a href="#"> Terms and Conditions</a
-                        ><span class="text-red-500">*</span></label
-                      ></span
-                    >
-                    <span class="text-blue-500 text-right"
-                      ><input
-                        type="button"
-                        onclick="showLogin()"
-                        value=" I have account, Login"
-                        class="cursor-pointer"
-                      />
-                    </span>
-                    <input
-                      type="submit"
-                      value="Register"
-                      class="bg-primary p-2 rounded-xl"
-                    />
-                  </div>
-                </form>
-              </div>
-              <div id="loginForm" class="">
-                <!-- login -->
-                <form action="" class="border-2 p-4 rounded-lg">
-                  <h3 class="text-center text-2xl">Login</h3>
-                  <div class="grid gap-4">
-                    <label for="email">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <label for="password">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      class="rounded-xl p-2 text-gray-900"
-                    />
-                    <div class="text-blue-500 flex flex-wrap w-full">
-                      <a href="" class="whitespace-nowrap mr-auto"
-                        >Forget Password</a
-                      >
-                      <span
-                        onclick="showRegister()"
-                        class="cursor-pointer whitespace-nowrap ml-auto"
-                      >
-                        I don't have account, Register</span
-                      >
-                    </div>
-                    <input
-                      type="submit"
-                      value="Login"
-                      class="bg-primary p-2 rounded-xl text-gray-100"
-                    />
-                  </div>
-                </form>
-              </div>
+            <div>
+              <label class="block font-medium mb-1">Password</label>
+              <input
+                type="password"
+                class="w-full px-4 py-2 rounded-xl border border-primary/40 dark:border-secondary/40 bg-bglight dark:bg-[#1F1B17] text-txtprimary dark:text-txtprimarydark focus:outline-none focus:ring-2 focus:ring-primary/70"
+                placeholder="Enter your password"
+                required
+              />
             </div>
-          </div>
+
+            <div class="flex justify-between items-center text-sm">
+              <label class="flex items-center gap-2">
+                <input type="checkbox" />
+                Remember me
+              </label>
+              <a
+                href="#"
+                class="text-primary dark:text-secondary hover:underline"
+                >Forgot Password?</a
+              >
+            </div>
+
+            <button
+              class="w-full py-3 mt-4 rounded-xl font-semibold bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/80 dark:hover:bg-secondary/80 transition-all"
+            >
+              Login
+            </button>
+          </form>
+
+          <p class="text-center mt-6 text-sm">
+            Don’t have an account?
+            <a
+              href="register.html"
+              class="text-primary dark:text-secondary hover:underline"
+              >Create one</a
+            >
+          </p>
         </div>
       </section>
     </main>

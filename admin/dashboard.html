@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DecoraHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex">
+      <div class="w-56 bg-gray-200 md:block hidden">
+        <h2 class="text-center py-4 font-bold text-2xl hover:text-secondary">
+          DecoraHub
+        </h2>
+        <nav class="grid gap-6 px-2">
+          <a
+            href="dashboard.html"
+            class="hover:bg-primary/90 hover:text-white hover:rounded-2xl p-3 text-xl"
+            ><i class="ri-dashboard-3-fill"></i> Dashboard
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-shopping-bag-fill"></i> Products
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-box-2-fill"></i> Orders
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-group-fill"></i> Customers
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-star-fill"></i> Reviews
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-discount-percent-fill"></i> Promotions
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-truck-fill"></i> Shipping
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-line-chart-fill"></i> Analytics
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-customer-service-2-fill"></i> Support
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-settings-2-fill"></i> Settings
+          </a>
+          <a
+            href=""
+            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+            ><i class="ri-logout-box-r-fill"></i> Logout
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-4 flex-1">
+        <h2 class="font-bold text-2xl">Dashboard</h2>
+        <hr class="h-1 bg-blue-600" />
+        <div class="grid md:grid-cols-4 gap-4 mt-5 mb-8">
+          <div class="p-8 shadow rounded-lg bg-green-300 flex justify-between">
+            <i class="ri-line-chart-fill text-6xl"></i>
+            <div class="w-1/2">
+              <h3 class="font-medium text-2xl">Total Sales</h3>
+              <p class="text-3xl">$1500</p>
+            </div>
+          </div>
+          <div class="p-8 shadow rounded-lg bg-blue-300 flex justify-between">
+            <i class="ri-pie-chart-2-fill text-6xl"></i>
+            <div class="w-1/2">
+              <h3 class="font-medium text-2xl">Total Orders</h3>
+              <p class="text-3xl">150</p>
+            </div>
+          </div>
+          <div class="p-8 shadow rounded-lg bg-purple-200 flex justify-between">
+            <i class="ri-bar-chart-fill text-6xl"></i>
+            <div class="w-2/3">
+              <h3 class="font-medium text-2xl">Total Customers</h3>
+              <p class="text-3xl">1500</p>
+            </div>
+          </div>
+          <div class="p-8 shadow rounded-lg bg-red-300 flex justify-between">
+            <i class="ri-donut-chart-fill text-6xl"></i>
+            <div class="w-2/3">
+              <h3 class="font-medium text-2xl">Pending Orders</h3>
+              <p class="text-3xl">1500</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!-- div for graph container -->
+
+          <div class="flex gap-4 h-[70vh] justify-around items-center">
+            <canvas
+              id="myChartDg"
+              class="bg-gray-200 rounded-lg w-full p-4"
+            ></canvas>
+            <canvas
+              id="myChart"
+              height="250"
+              class="bg-gray-200 rounded-lg w-full p-2"
+            ></canvas>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <script>
+            const ctx = document.getElementById("myChartDg");
+
+            new Chart(ctx, {
+              type: "doughnut",
+              data: {
+                labels: ["Home", "Office", "Studio", "Cafe&rst", "Others"],
+                datasets: [
+                  {
+                    label: "most sold categoty",
+                    data: [5, 5, 5, 5, 5],
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: {},
+            });
+          </script>
+          <script>
+            const ctx2 = document.getElementById("myChart");
+
+            new Chart(ctx2, {
+              type: "line",
+              data: {
+                labels: ["2016", "2018", "2020", "2022", "2024", "2026"],
+                datasets: [
+                  {
+                    label: "no of Sales",
+                    data: [0, 3, 4, 8, 2, 3],
+                    borderColor: "green",
+
+                    borderWidth: 2,
+                  },
+                ],
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+        <div class="grid grid-cols-3 gap-4 py-8 px-4">
+          <div class="bg-gray-200 rounded-xl pb-4">
+            <div class="flex justify-between p-4">
+              <h3 class="text-2xl">Messages</h3>
+              <a href="">Show All</a>
+            </div>
+            <div class="grid gap-1">
+              <div class="bg-gray-300 p-2 rounded-xl">
+                <div class="flex items-center px-2">
+                  <img
+                    src="assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="flex justify-between w-full">
+                    <span class="text-xl px-2">User name</span>
+                    <span class="text-right px-4">20 minutes ago</span>
+                  </div>
+                </div>
+                <p class="text-lg text-center py-4">
+                  hi hello how are you! This is a text Messages
+                </p>
+              </div>
+              <div class="bg-gray-300 p-2 rounded-xl">
+                <div class="flex items-center px-2">
+                  <img
+                    src="assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="flex justify-between w-full">
+                    <span class="text-xl px-2">User name</span>
+                    <span class="text-right px-4">20 minutes ago</span>
+                  </div>
+                </div>
+                <p class="text-lg text-center py-4">
+                  hi hello how are you! This is a text Messages
+                </p>
+              </div>
+              <div class="bg-gray-300 p-2 rounded-xl">
+                <div class="flex items-center px-2">
+                  <img
+                    src="assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="flex justify-between w-full">
+                    <span class="text-xl px-2">User name</span>
+                    <span class="text-right px-4">20 minutes ago</span>
+                  </div>
+                </div>
+                <p class="text-lg text-center py-4">
+                  hi hello how are you! This is a text Messages
+                </p>
+              </div>
+              <div class="bg-gray-300 p-2 rounded-xl">
+                <div class="flex items-center px-2">
+                  <img
+                    src="assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="flex justify-between w-full">
+                    <span class="text-xl px-2">User name</span>
+                    <span class="text-right px-4">20 minutes ago</span>
+                  </div>
+                </div>
+                <p class="text-lg text-center py-4">
+                  hi hello how are you! This is a text Messages
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200 rounded-xl py-8 px-3 overflow-hidden">
+            <div class="origin-top-left scale-[1.7] w-[360px] h-[340px]">
+              <iframe
+                src="https://www.hamropatro.com/widgets/calender-medium.php"
+                class="w-[300px] h-[300px] border-0 overflow-hidden"
+                frameborder="0"
+                scrolling="no"
+                allowtransparency="true"
+              >
+              </iframe>
+            </div>
+          </div>
+          <div class="bg-gray-200 rounded-xl pb-4">
+            <div class="flex justify-between p-4">
+              <h3 class="text-2xl">To Do List</h3>
+              <a href="">Show All</a>
+            </div>
+            <div class="px-8 pb-4">
+              <input
+                type="text"
+                placeholder="Enter Task"
+                class="rounded-l-lg px-4 py-2 w-4/5"
+              /><input
+                type="button"
+                value="ADD"
+                class="bg-red-600 font-medium text-white rounded-r-lg p-2"
+              />
+            </div>
+            <div class="grid gap-4">
+              <div class="px-8 py-6 bg-gray-300 rounded-full">
+                <div class="flex gap-4 justify-between">
+                  <div class="flex gap-4">
+                    <input type="checkbox" class="scale-150" />
+                    <p class="text-xl">This is task one ..............</p>
+                  </div>
+                  <input
+                    type="button"
+                    value="X"
+                    class="font-bold hover:text-red-600 cursor-pointer"
+                  />
+                </div>
+              </div>
+              <div class="px-8 py-6 bg-gray-300 rounded-full">
+                <div class="flex gap-4 justify-between">
+                  <div class="flex gap-4">
+                    <input type="checkbox" class="scale-150" />
+                    <p class="text-xl">This is task Two ..............</p>
+                  </div>
+                  <input
+                    type="button"
+                    value="X"
+                    class="font-bold hover:text-red-600 cursor-pointer"
+                  />
+                </div>
+              </div>
+              <div class="px-8 py-6 bg-gray-300 rounded-full">
+                <div class="flex gap-4 justify-between">
+                  <div class="flex gap-4">
+                    <input
+                      type="checkbox"
+                      class="scale-150 pointer-events-none"
+                      checked
+                    />
+                    <p class="text-xl line-through">This is task Three</p>
+                  </div>
+                  <input
+                    type="button"
+                    value="X"
+                    class="text-red-600 font-bold"
+                  />
+                </div>
+              </div>
+              <div class="px-8 py-6 bg-gray-300 rounded-full">
+                <div class="flex gap-4 justify-between">
+                  <div class="flex gap-4">
+                    <input type="checkbox" class="scale-150" />
+                    <p class="text-xl">This is task Four ..............</p>
+                  </div>
+                  <input
+                    type="button"
+                    value="X"
+                    class="font-bold hover:text-red-600 cursor-pointer"
+                  />
+                </div>
+              </div>
+              <div class="px-8 py-6 bg-gray-300 rounded-full">
+                <div class="flex gap-4 justify-between">
+                  <div class="flex gap-4">
+                    <input type="checkbox" class="scale-150" />
+                    <p class="text-xl">This is task Five ..............</p>
+                  </div>
+                  <input
+                    type="button"
+                    value="X"
+                    class="font-bold hover:text-red-600 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-200 p-4">
+      <hr class="bg-black h-1 dark:bg-gray-100" />
+      <div>
+        <p class="text-center text-lg">
+          &copy;2025 DecoraHub All right reserved
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

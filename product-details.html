@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DecoraHub | Product</title>
+    <script src="tailwind-config.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function toggleNav() {
+        document.getElementById("mobNav").classList.toggle("hidden");
+      }
+      function darkTh() {
+        document.getElementById("da-li").classList.toggle("dark");
+      }
+    </script>
+  </head>
+  <body class="" id="da-li">
+    <div
+      class="text-center text-white bg-green-900 py-2 dark:bg-green-500 dark:text-black"
+    >
+      !! 🚧 Site under construction. Check back soon! 🔨 !!
+    </div>
+    <header
+      class="sticky top-0 z-10 bg-headerfooter dark:bg-headerfooterdark dark:text-gray-100 shadow-lg"
+    >
+      <div class="container mx-auto py-4">
+        <!-- This is for large screen view -->
+        <div class="md:flex hidden justify-between px-4">
+          <h1 class="text-2xl font-semibold hover:text-secondary">
+            <a href="index.html">DecoraHub</a>
+          </h1>
+          <nav class="hidden md:block">
+            <ul class="flex gap-5 font-medium text-lg">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-secondary hover:underline"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-secondary hover:underline"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#product" class="hover:text-secondary hover:underline"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a href="#blogs" class="hover:text-secondary hover:underline"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-secondary hover:underline"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="relative w-64">
+            <input
+              type="search"
+              class="rounded-lg p-2 w-full bg-gray-300 dark:bg-headerfooter text-gray-900"
+              placeholder="Search Products"
+            />
+            <button
+              class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-300"
+            ></button>
+          </div>
+          <div class="flex gap-5 p-2">
+            <a
+              href="#"
+              class="fa-solid fa-moon cursor-pointer hover:text-secondary"
+              onclick="darkTh()"
+            ></a>
+            <a
+              href="#"
+              class="fa-solid fa-cart-shopping hover:text-secondary"
+            ></a>
+            <a
+              href="login.html"
+              class="fa-solid fa-user hover:text-secondary"
+            ></a>
+          </div>
+        </div>
+        <!-- This is for mobile view -->
+        <div class="md:hidden p-2">
+          <div class="flex justify-between px-4 py-1 items-center">
+            <h1 class="text-2xl font-semibold hover:text-secondary">
+              <a href="index.html">DecoraHub</a>
+            </h1>
+            <div class="flex gap-5">
+              <a
+                href="#"
+                class="fa-solid fa-moon hover:text-secondary"
+                onclick="darkTh()"
+              ></a>
+              <a
+                href="#"
+                class="fa-solid fa-cart-shopping hover:text-secondary"
+              ></a>
+              <a
+                href="auth.html"
+                class="fa-solid fa-user hover:text-secondary"
+              ></a>
+              <span
+                class="fa-solid fa-bars cursor-pointer"
+                onclick="toggleNav()"
+              ></span>
+            </div>
+          </div>
+          <div class="p-2 relative">
+            <input
+              type="search"
+              class="rounded-lg p-2 w-full bg-gray-300 dark:bg-headerfooter text-gray-900"
+              placeholder="Search Product "
+            />
+            <button
+              class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-300"
+            ></button>
+          </div>
+          <nav class="hidden" id="mobNav">
+            <ul class="grid gap-8 text-center bg-bglight dark:bg-gray-800">
+              <li>
+                <a href="index.html" class="hover:text-secondary">Home</a>
+              </li>
+              <li><a href="#about" class="hover:text-secondary">About</a></li>
+              <li><a href="#product" class="hover:text-secondary">Shop</a></li>
+              <li><a href="#blogs" class="hover:text-secondary">Blogs</a></li>
+              <li>
+                <a href="#contact" class="hover:text-secondary">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="bg-bglight dark:bg-bgdark">
+      <section>
+        <div
+          class="container mx-auto px-4 py-8 bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark rounded-2xl"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <div class="border rounded-2xl">
+                <img
+                  src="assets/images/recomend-1.png"
+                  alt="img not found"
+                  class="object-cover hover:scale-110"
+                />
+              </div>
+              <div class="grid grid-cols-5 gap-3 py-8">
+                <div class="w-36 h-36 border rounded-lg bg-white">
+                  <img
+                    src="assets/images/recomend-1.png"
+                    alt="img not found"
+                    class="hover:scale-110"
+                  />
+                </div>
+                <div class="w-36 h-36 border rounded-lg bg-white">
+                  <img
+                    src="assets/images/recomend-2.png"
+                    alt="img not found"
+                    class="hover:scale-110"
+                  />
+                </div>
+                <div class="w-36 h-36 border rounded-lg bg-white">
+                  <img
+                    src="assets/images/recomend-3.png"
+                    alt="img not found"
+                    class="hover:scale-110"
+                  />
+                </div>
+                <div class="w-36 h-36 border rounded-lg bg-white">
+                  <img
+                    src="assets/images/recomend-4.png"
+                    alt="img not found"
+                    class="hover:scale-110"
+                  />
+                </div>
+                <div class="w-36 h-36 border rounded-lg bg-white">
+                  <img
+                    src="assets/images/hot-4.png"
+                    alt="img not found"
+                    class="hover:scale-110"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-medium">
+                FloatZen Modern Floating Wooden Bed | Handmade Luxury Bed Frame
+                Crafted from Premium Rose Wood | Minimalist Floating Design for
+                Elegant Bedrooms | Durable, Stylish & Made in Nepal
+              </h3>
+              <div class="text-[#FFC107] mt-8">
+                <span class="text-gray-900">4</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-gray-900">(900)</span>
+                <hr
+                  class="bg-black h-1 dark:bg-gray-100 mt-4 hidden lg:block"
+                />
+              </div>
+              <div class="hidden lg:block">
+                <h3 class="text-2xl">About this item</h3>
+                <p class="text-xl">
+                  The bed features a geometric patterned headboard, clean edges,
+                  and a natural wood texture that highlights the artistry of
+                  Nepali craftsmanship. Built for stability and long-lasting
+                  use, it combines form and function for a stunning centerpiece
+                  that transforms any bedroom into a minimalist retreat.
+                </p>
+              </div>
+              <hr class="bg-black h-1 dark:bg-gray-100 mt-4" />
+
+              <div class="mb-8">
+                <h3 class="text-xl my-4">Color family:</h3>
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >Black</span
+                >
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >Blue</span
+                >
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >green</span
+                >
+              </div>
+              <div class="mb-8">
+                <h3 class="text-xl my-4">Bedding size:</h3>
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >Full</span
+                >
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >Queen</span
+                >
+                <span
+                  class="border-primary border-2 rounded-lg p-2 text-lg mx-2 hover:bg-primary hover:text-bglight cursor-pointer"
+                  >King</span
+                >
+              </div>
+              <div class="text-3xl mb-4">
+                <span class="text-2xl">Quantity:</span>
+                <span class="p-2 cursor-pointer">-</span>
+                <span class="text-2xl p-2">1</span>
+                <span class="p-2 cursor-pointer">+</span>
+              </div>
+              <hr class="bg-black h-1 dark:bg-gray-100" />
+
+              <span class="text-4xl">$520</span>
+              <div class="my-8 flex justify-end gap-8">
+                <button
+                  class="p-4 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                >
+                  Add to Cart
+                </button>
+                <button
+                  class="p-4 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                >
+                  Buy Now
+                </button>
+              </div>
+              <h3 class="text-center text-xl">
+                See more details about Product
+              </h3>
+              <div class="flex justify-center text-2xl mt-2">
+                <span
+                  class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  ><a href="#details">&#8595;</a></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-bglight dark:bg-bgdark py-12">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl font-bold text-txtprimary dark:text-txtprimarydark pb-8"
+          >
+            Recommended For You
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-1.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Floating Wooden Bed
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Made From Rose Wood.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$600&nbsp;</span>$519.78</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-2.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  ZigZagCube Table Bookshelf
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Handcrafted From Premium Wood.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$6&nbsp;</span>$4.85</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-3.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Gorkha Organizer Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium solid wood & smooth finish.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$150&nbsp;</span>$131.68</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/recomend-4.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Minimal Bookshelf Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  melamine-coated particle board.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$160&nbsp;</span>$142.07</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="details">
+        <div class="container mx-auto px-4 dark:text-txtprimarydark">
+          <h3 class="font-medium text-2xl mb-2">Product information</h3>
+          <div class="lg:flex grid justify-center gap-8">
+            <div class="grid gap-4 text-lg lg:w-1/2">
+              <h3 class="text-xl">item details</h3>
+              <div
+                class="flex justify-between bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Brand name</span><span>DecoraHub</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Bed Type</span><span>DecoraHub</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Brand name</span><span>Floating</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Collection name</span><span>DecoraHub</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Indoor Outdoor Usage</span><span>Indoor</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>item Height</span><span>36+ Inches</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>item Width</span><span>82+ Inches</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>item length</span><span>118+ Inches</span>
+              </div>
+              <div
+                class="flex justify-between bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Manufacturer</span><span>DecoraHub</span>
+              </div>
+            </div>
+            <div class="grid gap-2 lg:w-1/2">
+              <h3 class="text-xl">item Style</h3>
+              <div
+                class="flex justify-between items-center bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Color</span><span>Black, Blue, green</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Style Name</span><span>Mid-Century Modern</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Arm Name</span><span>Rectangular</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-secondary/60 dark:bg-[#2A241EE6] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Pattern</span><span>Solid</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark p-2 rounded-lg"
+              >
+                <span>Cushion Style</span><span>Rectangular</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-8">
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div
+            class="border rounded-2xl p-6 bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark"
+          >
+            <h3 class="font-semibold mb-4 text-2xl">Ratings</h3>
+
+            <div class="lg:flex grid justify-between">
+              <div class="text-5xl grid justify-center w-1/2 text-center">
+                <h3>4<span class="text-4xl">/5</span></h3>
+                <div class="text-[#FFC107] my-8 flex">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-xl font-light">900 Rating</p>
+              </div>
+              <div class="grid grid-cols-3 gap-4 p-4 items-center">
+                <div class="space-y-4 text-[#FFC107]">
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                    <i class="fa-solid fa-star text-gray-300"></i>
+                  </div>
+                </div>
+                <div class="space-y-6">
+                  <div class="h-4 bg-[#FFC107] w-full rounded"></div>
+                  <div class="h-4 bg-[#FFC107]/80 w-4/5 rounded"></div>
+                  <div class="h-4 bg-[#FFC107]/70 w-3/5 rounded"></div>
+                  <div class="h-4 bg-[#FFC107]/70 w-2/5 rounded"></div>
+                  <div class="h-4 bg-[#FFC107]/70 w-1/5 rounded"></div>
+                </div>
+                <div class="space-y-4 text-right font-semibold">
+                  <p>20</p>
+                  <p>30</p>
+                  <p>40</p>
+                  <p>690</p>
+                  <p>120</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center my-8">
+              <button
+                class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+              >
+                Write a Review
+              </button>
+            </div>
+          </div>
+          <div
+            class="border rounded-2xl p-6 bg-secondary/40 dark:bg-[#2A241E] dark:text-txtprimarydark"
+          >
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-semibold">Reviews</h3>
+              <select
+                class="border rounded-lg px-3 py-1 text-sm dark:bg-[#2A241E] dark:text-textprimarydark"
+              >
+                <option>Top</option>
+                <option>Newest</option>
+              </select>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-5 shadow-lg m-2 bg-bglight dark:bg-[#1E1B19] hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              >
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="ml-4">
+                    <h3 class="dark:text-gray-100">User1</h3>
+                    <div class="text-yellow-400">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="dark:text-gray-100">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus ab cupiditate ratione dignissimos mollitia vero
+                  omnis ipsa assumenda cumque veniam quaerat adipisci non quasi
+                  alias, nesciunt suscipit reiciendis, similique exercitationem,
+                  excepturi pariatur voluptate. Asperiores omnis error tempora,
+                  atque dolore aspernatur esse temporibus, quidem deleniti autem
+                  sed nam ducimus a amet!
+                </p>
+              </div>
+              <div
+                class="rounded-xl p-5 shadow-lg m-2 bg-bglight dark:bg-[#1E1B19] hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              >
+                <div class="flex items-center">
+                  <img
+                    src="/assets/images/user.jpeg"
+                    alt="image not found"
+                    class="w-12 h-12 object-cover rounded-full"
+                  />
+                  <div class="ml-4">
+                    <h3 class="dark:text-gray-100">User2</h3>
+                    <div class="text-yellow-400">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="dark:text-gray-100">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                  a molestiae nesciunt consequuntur, libero quia eius, veritatis
+                  pariatur, quae laudantium officiis? Quas, dolorem. Facere vel
+                  asperiores sunt, obcaecati voluptates necessitatibus culpa hic
+                  excepturi dicta officia velit aut, voluptas, amet distinctio
+                  numquam odit sapiente! Aperiam tempora sit quaerat, sapiente
+                  fuga distinctio?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-bglight dark:bg-bgdark pt-12">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl font-bold text-txtprimary dark:text-txtprimarydark pb-8"
+          >
+            Hot Picks
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-1.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Modern Bookcase Rack
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  premium Duco-coated compressed board.
+                </p>
+
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$150&nbsp;</span>$137.22</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-2.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Bed with Storage
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium solid wood & smooth finish hello.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$350&nbsp;</span>$318.80</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-3.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Large Conference Table
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  High-grade laminated compressed board.
+                </p>
+
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$225</span>&nbsp;$200</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-[#1E1B19] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+            >
+              <img src="assets/images/hot-4.png" alt="img not found" />
+              <div class="p-4">
+                <h3
+                  class="text-lg font-semibold text-txtprimary dark:text-txtprimarydark"
+                >
+                  Premium Upholstered Sofa
+                </h3>
+                <p class="text-txtsecondary dark:text-txtsecondarydark text-sm">
+                  Premium Handmade with smooth finish.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span
+                    class="text-primary font-bold text-xl dark:text-gray-300"
+                    ><span class="line-through">$400&nbsp;</span>$381.18</span
+                  >
+                  <button
+                    class="px-4 py-2 rounded-lg bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-secondary/40 dark:bg-[#2A241E] text-txtprimary dark:text-txtprimarydark py-14"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="text-center md:text-left">
+              <h3
+                class="text-3xl font-bold tracking-tight text-primary dark:text-txtprimarydark"
+              >
+                Get More Updates From Us
+              </h3>
+              <p class="mt-1 text-txtsecondary dark:text-txtsecondarydark">
+                Stay informed with our latest offers and announcements.
+              </p>
+            </div>
+            <div
+              class="flex items-center w-full md:w-auto justify-center mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-4 py-2 w-full md:w-64 rounded-l-xl border border-primary/40 dark:border-secondary/40 bg-[#FBF8F2] dark:bg-[#1F1B17] text-txtprimary dark:text-txtprimarydark placeholder-txtsecondary dark:placeholder-txtsecondarydark focus:outline-none focus:ring-2 focus:ring-primary/60 shadow-sm"
+              />
+
+              <button
+                class="px-6 py-2 rounded-r-xl font-medium bg-primary text-bglight dark:bg-secondary dark:text-bglight hover:bg-primary/90 dark:hover:bg-secondary/80 transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer starts here -->
+    <footer
+      class="bg-headerfooter dark:bg-headerfooterdark dark:text-gray-100"
+      id="about"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="grid gap-4 md:grid-cols-4 pb-8">
+          <div>
+            <h3 class="text-xl">DecoraHub</h3>
+            <p class="text-left">
+              Your one-stop destination for stylish, quality furniture that
+              transforms any space into a masterpiece.
+            </p>
+            <div class="py-4">
+              <i class="fa-brands fa-facebook fa-xl"></i>
+              <i class="fa-brands fa-instagram fa-xl"></i>
+              <i class="fa-brands fa-x-twitter fa-xl"></i>
+              <i class="fa-brands fa-linkedin fa-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl">Quick link</h3>
+            <div class="grid">
+              <a href="index.html">Home</a>
+              <a href="#about">About</a>
+              <a href="#product">Shop</a>
+              <a href="#blogs">Blogs</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl">Customer Service</h3>
+            <div class="grid">
+              <a href="#about">FAQs</a>
+              <a href="#about">Privacy Policy</a>
+              <a href="#about">Terms and condition</a>
+              <a href="#about">Support center</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl">We accept</h3>
+            <div class="text-3xl">
+              <i class="fa-brands fa-cc-visa text-blue-600 bg-white"></i>
+              <i class="fa-brands fa-cc-mastercard text-red-600 bg-white"></i>
+              <i class="fa-brands fa-cc-apple-pay"></i>
+              <i
+                class="fa-solid fa-building-columns text-yellow-700 bg-white"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-black h-1 dark:bg-gray-100" />
+        <div>
+          <p class="text-center text-lg">
+            &copy;2025 DecoraHub All right reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

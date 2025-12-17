@@ -12,84 +12,458 @@
     />
   </head>
   <body>
-    <div class="flex">
-      <div class="w-56 bg-gray-200 md:block hidden">
-        <h2 class="text-center py-4 font-bold text-2xl hover:text-secondary">
-          DecoraHub
-        </h2>
-        <nav class="grid gap-6 px-2">
-          <a
-            href="dashboard.html"
-            class="hover:bg-primary/90 hover:text-white hover:rounded-2xl p-3 text-xl"
-            ><i class="fa-solid fa-gauge-high"></i> Dashboard
-          </a>
-          <a
-            href="products.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-bag-shopping"></i> Products
-          </a>
-          <a
-            href="orders.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-box"></i> Orders
-          </a>
-          <a
-            href="customers.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-users"></i> Customers
-          </a>
-          <a
-            href="reviews.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-star"></i> Reviews
-          </a>
-          <a
-            href="promotions.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-percent"></i> Promotions
-          </a>
-          <a
-            href="shipping.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-truck-fast"></i> Shipping
-          </a>
-          <a
-            href="analytics.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-chart-line"></i> Analytics
-          </a>
-          <a
-            href="support.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-headset"></i></i> Support
-          </a>
-          <a
-            href="setting.html"
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-gear"></i> Setting
-          </a>
-          <a
-            href=""
-            class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
-            ><i class="fa-solid fa-right-from-bracket"></i> Logout
-          </a>
-        </nav>
+    <main class="bg-gray-100">
+      <div class="flex">
+        <!-- flex box 1 for navbar and other contents -->
+        <div class="w-56 bg-gray-200 md:block hidden">
+          <h2 class="text-center py-4 font-bold text-2xl hover:text-secondary">
+            DecoraHub
+          </h2>
+          <nav class="grid gap-6 px-2">
+            <a
+              href="dashboard.html"
+              class="hover:bg-primary/90 hover:text-white hover:rounded-2xl p-3 text-xl"
+              ><i class="fa-solid fa-gauge-high"></i> Dashboard
+            </a>
+            <a
+              href="products.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-bag-shopping"></i> Products
+            </a>
+            <a
+              href="orders.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-box"></i> Orders
+            </a>
+            <a
+              href="customers.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-users"></i> Customers
+            </a>
+            <a
+              href="reviews.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-star"></i> Reviews
+            </a>
+            <a
+              href="promotions.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-percent"></i> Promotions
+            </a>
+            <a
+              href="shipping.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-truck-fast"></i> Shipping
+            </a>
+            <a
+              href="analytics.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-chart-line"></i> Analytics
+            </a>
+            <a
+              href="support.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-headset"></i> Support
+            </a>
+            <a
+              href="setting.html"
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-gear"></i> Setting
+            </a>
+            <a
+              href=""
+              class="hover:bg-primary/90 hover:text-white p-3 text-xl hover:rounded-2xl"
+              ><i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+          </nav>
+        </div>
+        <!-- flex box 2 for contens  -->
+        <div class="p-4 flex-1">
+          <h2 class="font-bold text-2xl">Orders</h2>
+          <hr class="h-1 bg-blue-600" />
+          <div class="grid md:grid-cols-5 gap-4 mt-5 mb-8">
+            <div class="p-8 shadow rounded-lg bg-gray-50 flex justify-between">
+              <div class="w-2/3 space-y-2">
+                <h3 class="font-medium text-xl">Total Revenue</h3>
+                <p class="text-3xl font-medium">$1498.44</p>
+                <p class="text-primary font-medium">+10% from last month</p>
+              </div>
+              <div class="flex items-center text-primary/90">
+                <i class="fa-solid fa-dollar-sign text-4xl"></i>
+              </div>
+            </div>
+            <div class="p-8 shadow rounded-lg bg-gray-50 flex justify-between">
+              <div class="w-2/3 space-y-2">
+                <h3 class="font-medium text-xl">Pending</h3>
+                <p class="text-3xl font-medium">8</p>
+                <p>awating confirmation</p>
+              </div>
+              <div class="flex items-center text-primary/90">
+                <i class="fa-regular fa-clock text-4xl"></i>
+              </div>
+            </div>
+            <div class="p-8 shadow rounded-lg bg-gray-50 flex justify-between">
+              <div class="w-2/3 space-y-2">
+                <h3 class="font-medium text-xl">Processing</h3>
+                <p class="text-3xl">26</p>
+                <p>Being Prepared</p>
+              </div>
+              <div class="flex items-center text-primary/90">
+                <i class="fa-solid fa-box-open text-4xl"></i>
+              </div>
+            </div>
+            <div class="p-8 shadow rounded-lg bg-gray-50 flex justify-between">
+              <div class="w-2/3 space-y-2">
+                <h3 class="font-medium text-xl">Shipped</h3>
+                <p class="text-3xl font-medium">46</p>
+                <p>In transit</p>
+              </div>
+              <div class="flex items-center text-primary/90">
+                <i class="fa-regular fa-truck text-4xl"></i>
+              </div>
+            </div>
+            <div class="p-8 shadow rounded-lg bg-gray-50 flex justify-between">
+              <div class="w-2/3 space-y-2">
+                <h3 class="font-medium text-xl">Delivered</h3>
+                <p class="text-3xl font-medium">10</p>
+                <p>Competed orders</p>
+              </div>
+              <div class="flex items-center text-primary/90">
+                <i class="fa-regular fa-circle-check text-4xl"></i>
+              </div>
+            </div>
+          </div>
+          <!-- this div for order list -->
+          <div class="mx-8">
+            <h3 class="text-3xl">Recent Orders</h3>
+            <div class="flex justify-between mt-4">
+              <div>
+                <input
+                  type="search"
+                  class="p-2 rounded-l-lg"
+                  placeholder="Search orders...."
+                /><button class="rounded-r-lg bg-white p-2"></button>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+              <!-- div for processing canedl etc -->
+              <div class="flex gap-4">
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg bg-primary/90 text-gray-100 cursor-pointer"
+                  >All Orders</span
+                >
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg hover:bg-primary/90 hover:text-gray-100 cursor-pointer"
+                  >Pending</span
+                >
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg hover:bg-primary/90 hover:text-gray-100 cursor-pointer"
+                  >Processing</span
+                >
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg hover:bg-primary/90 hover:text-gray-100 cursor-pointer"
+                  >Shipped</span
+                >
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg hover:bg-primary/90 hover:text-gray-100 cursor-pointer"
+                  >Delivered</span
+                >
+                <span
+                  class="border-2 border-primary/90 p-2 rounded-lg hover:bg-primary/90 hover:text-gray-100 cursor-pointer"
+                  >Cancelled</span
+                >
+              </div>
+            </div>
+            <div class="my-8">
+              <!-- main div outside grid -->
+              <div class="grid">
+                <div
+                  class="grid grid-cols-6 text-xl font-medium bg-gray-50 p-2 rounded-lg border-2"
+                >
+                  <span>Orders</span>
+                  <span>Customer</span>
+                  <span>Status</span>
+                  <span>Items</span>
+                  <span>Total</span>
+                  <span>Date</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-01</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-orange-500 bg-orange-100 font-medium border-orange-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-clock"></i> <span>Pending</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$208.09</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-02</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub2@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-blue-500 bg-blue-100 font-medium border-blue-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-solid fa-box-open"></i> <span>Processing</span>
+                  </div>
+                  <span>4</span>
+                  <span class="font-medium">$198.89</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-03</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-purple-500 bg-purple-100 font-medium border-purple-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-truck"></i> <span>Shipped</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$408.90</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-04</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-green-500 bg-green-100 font-medium border-green-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span>Delivered</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$908.18</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-05</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-red-500 bg-red-100 font-medium border-red-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-xmark"></i>
+                    <span>Cancelled</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$1104.44</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-06</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-orange-500 bg-orange-100 font-medium border-orange-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-clock"></i> <span>Pending</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$208.09</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-07</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub2@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-blue-500 bg-blue-100 font-medium border-blue-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-solid fa-box-open"></i> <span>Processing</span>
+                  </div>
+                  <span>4</span>
+                  <span class="font-medium">$198.89</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-08</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-purple-500 bg-purple-100 font-medium border-purple-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-truck"></i> <span>Shipped</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$408.90</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-09</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-green-500 bg-green-100 font-medium border-green-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span>Delivered</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$908.18</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-10</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-red-500 bg-red-100 font-medium border-red-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-xmark"></i>
+                    <span>Cancelled</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$1104.44</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-11</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-orange-500 bg-orange-100 font-medium border-orange-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-clock"></i> <span>Pending</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$208.09</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-12</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub2@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-blue-500 bg-blue-100 font-medium border-blue-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-solid fa-box-open"></i> <span>Processing</span>
+                  </div>
+                  <span>4</span>
+                  <span class="font-medium">$198.89</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-13</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-purple-500 bg-purple-100 font-medium border-purple-500 border rounded-full w-2/3 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-truck"></i> <span>Shipped</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$408.90</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-14</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-green-500 bg-green-100 font-medium border-green-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span>Delivered</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$908.18</span>
+                  <span>2025-12-17</span>
+                </div>
+                <div
+                  class="grid grid-cols-6 text-lg bg-gray-50 p-2 rounded-lg items-center border-2"
+                >
+                  <span>DF-025-12-17-15</span>
+                  <div>
+                    <span class="font-medium">Decorahub</span>
+                    <p>decorahub@gmail.com</p>
+                  </div>
+                  <div
+                    class="text-red-500 bg-red-100 font-medium border-red-500 border rounded-full w-3/4 px-8 py-1"
+                  >
+                    <i class="fa-regular fa-circle-xmark"></i>
+                    <span>Cancelled</span>
+                  </div>
+                  <span>2</span>
+                  <span class="font-medium">$1104.44</span>
+                  <span>2025-12-17</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="p-4 flex-1">
-        <h2 class="font-bold text-2xl">Dashboard</h2>
-        <hr class="h-1 bg-blue-600" />
-        
-       
+    </main>
+    <!-- footer -->
+    <footer>
+      <div class="bg-gray-200 p-4">
+        <hr class="bg-black h-1 dark:bg-gray-100" />
+        <div>
+          <p class="text-center text-lg">
+            &copy;2025 DecoraHub All right reserved
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="bg-gray-200 p-4">
-      <hr class="bg-black h-1 dark:bg-gray-100" />
-      <div>
-        <p class="text-center text-lg">
-          &copy;2025 DecoraHub All right reserved
-        </p>
-      </div>
-    </div>
+    </footer>
   </body>
 </html>

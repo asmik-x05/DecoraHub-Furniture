@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fall {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-15deg);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(10px) rotate(-20deg);
+                opacity: 0.5;
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fall-animation-1 {
+            animation: fall 2s ease-in-out infinite;
+        }
+
+        .fall-animation-2 {
+            animation: fall 2s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+
+        .wood-grain {
+            background-image: repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 111, 71, 0.3) 2px,
+                    rgba(139, 111, 71, 0.3) 4px);
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen bg-gradient-to-br from-amber-50 to-yellow-100 flex items-center justify-center overflow-hidden font-serif">
+
+    <!-- Wood grain overlay -->
+    <div class="fixed inset-0 opacity-5 pointer-events-none wood-grain"></div>
+
+    <div class="text-center px-5 py-10 max-w-4xl relative z-10">
+
+        <!-- Animated Chair -->
+        <div class="relative mb-8 float-animation">
+            <div class="w-52 h-56 mx-auto relative">
+                <!-- Chair Back -->
+                <div class="w-36 h-24 bg-amber-800 rounded-t-2xl mx-auto relative shadow-inner">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20 rounded-t-2xl">
+                    </div>
+                </div>
+
+                <!-- Chair Seat -->
+                <div class="w-40 h-20 bg-amber-700 rounded-xl -mt-1 mx-auto relative shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-10 rounded-xl">
+                    </div>
+
+                    <!-- Chair Legs -->
+                    <div class="absolute w-4 h-20 bg-amber-800 rounded-b left-5 top-full"></div>
+                    <div class="absolute w-4 h-20 bg-amber-800 rounded-b right-5 top-full"></div>
+                    <div class="absolute w-4 h-20 bg-amber-800 rounded-b left-5 top-full mt-1"></div>
+                    <div class="absolute w-4 h-20 bg-amber-800 rounded-b right-5 top-full mt-1"></div>
+                </div>
+            </div>
+
+            <!-- Broken Pieces -->
+            <div
+                class="absolute w-16 h-10 bg-amber-800 rounded top-32 -left-20 opacity-80 fall-animation-1 rotate-[-15deg]">
+            </div>
+            <div
+                class="absolute w-16 h-10 bg-amber-800 rounded top-36 -right-20 opacity-80 fall-animation-2 rotate-[20deg]">
+            </div>
+        </div>
+
+        <!-- Error Code -->
+        <h1 class="text-9xl md:text-[150px] font-bold text-amber-900 mb-5 tracking-tighter"
+            style="text-shadow: 3px 3px 0 rgba(0,0,0,0.1);">
+            404
+        </h1>
+
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl text-amber-800 mb-5 font-normal">
+            Oops! This Page Has Been Discontinued
+        </h2>
+
+        <!-- Description -->
+        <p class="text-lg text-amber-900 mb-10 leading-relaxed max-w-2xl mx-auto">
+            Looks like this page got shipped to the wrong address.<br>
+            Don't worry, we have plenty of other great furniture to browse!
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap gap-5 justify-center">
+            <a href="/"
+                class="px-9 py-4 bg-amber-800 text-white rounded-lg shadow-lg hover:bg-amber-900 hover:-translate-y-1 transition-all duration-300 text-base font-medium">
+                Back to Home
+            </a>
+            <a href="/shop"
+                class="px-9 py-4 bg-white text-amber-800 border-2 border-amber-800 rounded-lg hover:bg-amber-800 hover:text-white hover:-translate-y-1 transition-all duration-300 text-base font-medium">
+                Browse Furniture
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

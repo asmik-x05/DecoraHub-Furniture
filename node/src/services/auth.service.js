@@ -1,6 +1,6 @@
-import User from "../models/Users.js";
 import bcrypt from "bcryptjs";
-import { createJWT } from "../utils/jwt.js";
+import User from "../models/Users.js";
+
 const login = async (data) => {
   const user = await User.findOne({
     $or: [{ email: data?.email }, { phone: data?.phone }],
@@ -27,6 +27,7 @@ const login = async (data) => {
     isActive: user.isActive,
   };
 };
+
 const register = async (data) => {
   const user = await User.findOne({
     $or: [{ email: data?.email }, { phone: data?.phone }],
@@ -45,6 +46,7 @@ const register = async (data) => {
     address: data.address,
     password: hashedPassword,
   });
+
   return {
     _id: createdUser._id,
     Name: createdUser.name,
@@ -62,7 +64,6 @@ const forgetPassoword = async (email) => {
   const token = crypto.randomUUID();
 };
 
-const resetPassword = async (userId, token, password) => {
-  
-};
+const resetPassword = async (userId, token, password) => {};
+
 export default { login, register, forgetPassoword };

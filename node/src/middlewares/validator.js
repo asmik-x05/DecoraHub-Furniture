@@ -1,4 +1,4 @@
-import {ZodError}  from "zod";
+import { ZodError } from "zod";
 
 const validate = (Schema) => (req, res, next) => {
   try {
@@ -12,4 +12,5 @@ const validate = (Schema) => (req, res, next) => {
     next(error);
   }
 };
+
 export default validate;

@@ -8,4 +8,5 @@ const createUser = async (req, res) => {
     res.status(400).send(error?.message);
   }
 };
-export default {createUser};
+
+export default { createUser };

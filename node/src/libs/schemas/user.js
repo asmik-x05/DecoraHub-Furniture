@@ -1,9 +1,11 @@
 import z from "zod";
+
 const addressSchema = z.object({
   city: z.string(),
   province: z.string(),
   country: z.string(),
 });
+
 const userSchema = z.object({
   name: z.string(),
   email: z.email(),
@@ -11,4 +13,5 @@ const userSchema = z.object({
   phone: z.string().min(6).max(13),
   address: addressSchema,
 });
+
 export { userSchema };

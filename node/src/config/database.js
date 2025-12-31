@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import config from "./config.js";
+
 async function connectDb() {
   try {
     const status = await mongoose.connect(config.mongodburl);
@@ -9,4 +10,5 @@ async function connectDb() {
     process.exit(1);
   }
 }
+
 export default connectDb;

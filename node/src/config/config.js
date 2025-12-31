@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 
 dotenv.config();
+
 const config = {
   name: process.env.NAME || "",
   port: process.env.PORT || 5000,
@@ -8,4 +9,5 @@ const config = {
   mongodburl: process.env.MONGODB_URL || "",
   jwtsecret: process.env.JWT_SECRET || "KEY",
 };
+
 export default config;

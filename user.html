@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DecoraHub</title>
+    <script src="tailwind-config.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script>
+        function toggleNav() {
+            document.getElementById("mobNav").classList.toggle("hidden");
+        }
+        function darkTh() {
+            document.getElementById("da-li").classList.toggle("dark");
+        }
+    </script>
+</head>
+
+<body class="" id="da-li">
+    <div class="text-center text-white bg-green-900 py-2 dark:bg-green-500 dark:text-black">
+        !! 🚧 Site under construction. Check back soon! 🔨 !!
+    </div>
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-4xl font-bold text-amber-900 mb-2">User Management</h1>
+                    <p class="text-amber-700">Manage customers and admin users</p>
+                </div>
+                <button onclick="openAddUserModal()"
+                    class="px-6 py-3 bg-amber-800 text-white rounded-lg hover:bg-amber-900 transition shadow-md">
+                    ➕ Add New User
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-amber-600 text-sm mb-1">Total Users</p>
+                        <p class="text-3xl font-bold text-amber-900">1,247</p>
+                    </div>
+                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center text-2xl">
+                        👥
+                    </div>
+                </div>
+                <p class="text-green-600 text-sm mt-3">↗ +12% this month</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-600 text-sm mb-1">Active Users</p>
+                        <p class="text-3xl font-bold text-blue-900">1,089</p>
+                    </div>
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-2xl">
+                        ✅
+                    </div>
+                </div>
+                <p class="text-green-600 text-sm mt-3">87% of total</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-purple-600 text-sm mb-1">New Today</p>
+                        <p class="text-3xl font-bold text-purple-900">23</p>
+                    </div>
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-2xl">
+                        ⭐
+                    </div>
+                </div>
+                <p class="text-green-600 text-sm mt-3">↗ +5 from yesterday</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-red-600 text-sm mb-1">Blocked Users</p>
+                        <p class="text-3xl font-bold text-red-900">158</p>
+                    </div>
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center text-2xl">
+                        🚫
+                    </div>
+                </div>
+                <p class="text-amber-600 text-sm mt-3">13% of total</p>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <input type="text" placeholder="🔍 Search users..."
+                    class="px-4 py-3 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none">
+
+                <select
+                    class="px-4 py-3 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none text-amber-900">
+                    <option>All Roles</option>
+                    <option>Admin</option>
+                    <option>Customer</option>
+                    <option>Manager</option>
+                </select>
+
+                <select
+                    class="px-4 py-3 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none text-amber-900">
+                    <option>All Status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>Blocked</option>
+                </select>
+
+                <button class="px-6 py-3 bg-amber-800 text-white rounded-lg hover:bg-amber-900 transition">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-amber-800 text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left">
+                                <input type="checkbox" class="w-5 h-5">
+                            </th>
+                            <th class="px-6 py-4 text-left">User</th>
+                            <th class="px-6 py-4 text-left">Email</th>
+                            <th class="px-6 py-4 text-left">Role</th>
+                            <th class="px-6 py-4 text-left">Status</th>
+                            <th class="px-6 py-4 text-left">Orders</th>
+                            <th class="px-6 py-4 text-left">Joined</th>
+                            <th class="px-6 py-4 text-left">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-amber-100">
+                        <!-- User 1 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        JS
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">John Smith</p>
+                                        <p class="text-sm text-amber-600">ID: #USR001</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">john.smith@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Admin</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Active</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">47</td>
+                            <td class="px-6 py-4 text-amber-700">Jan 15, 2023</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-red-100 text-red-800 rounded hover:bg-red-200 transition text-sm">Block</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 2 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        EM
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">Emma Miller</p>
+                                        <p class="text-sm text-amber-600">ID: #USR002</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">emma.m@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Customer</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Active</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">12</td>
+                            <td class="px-6 py-4 text-amber-700">Mar 22, 2023</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-red-100 text-red-800 rounded hover:bg-red-200 transition text-sm">Block</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 3 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        MJ
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">Michael Johnson</p>
+                                        <p class="text-sm text-amber-600">ID: #USR003</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">m.johnson@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Manager</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Active</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">8</td>
+                            <td class="px-6 py-4 text-amber-700">Feb 10, 2023</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-red-100 text-red-800 rounded hover:bg-red-200 transition text-sm">Block</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 4 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        SD
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">Sarah Davis</p>
+                                        <p class="text-sm text-amber-600">ID: #USR004</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">sarah.d@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Customer</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Blocked</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">3</td>
+                            <td class="px-6 py-4 text-amber-700">Apr 5, 2024</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-green-100 text-green-800 rounded hover:bg-green-200 transition text-sm">Unblock</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 5 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        DW
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">David Wilson</p>
+                                        <p class="text-sm text-amber-600">ID: #USR005</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">d.wilson@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Customer</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Inactive</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">0</td>
+                            <td class="px-6 py-4 text-amber-700">Dec 1, 2024</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-red-100 text-red-800 rounded hover:bg-red-200 transition text-sm">Block</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 6 -->
+                        <tr class="hover:bg-amber-50 transition">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5">
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold">
+                                        LB
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-amber-900">Lisa Brown</p>
+                                        <p class="text-sm text-amber-600">ID: #USR006</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-amber-800">lisa.brown@email.com</td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Customer</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Active</span>
+                            </td>
+                            <td class="px-6 py-4 text-amber-900 font-semibold">25</td>
+                            <td class="px-6 py-4 text-amber-700">May 18, 2023</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition text-sm">View</button>
+                                    <button
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 transition text-sm">Edit</button>
+                                    <button
+                                        class="px-3 py-1 bg-red-100 text-red-800 rounded hover:bg-red-200 transition text-sm">Block</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center px-6 py-4 bg-amber-50 border-t border-amber-100">
+                <p class="text-amber-700">Showing 1-6 of 1,247 users</p>
+                <div class="flex gap-2">
+                    <button
+                        class="px-4 py-2 border-2 border-amber-800 text-amber-800 rounded-lg hover:bg-amber-800 hover:text-white transition">Previous</button>
+                    <button class="px-4 py-2 bg-amber-800 text-white rounded-lg">1</button>
+                    <button
+                        class="px-4 py-2 border-2 border-amber-800 text-amber-800 rounded-lg hover:bg-amber-800 hover:text-white transition">2</button>
+                    <button
+                        class="px-4 py-2 border-2 border-amber-800 text-amber-800 rounded-lg hover:bg-amber-800 hover:text-white transition">3</button>
+                    <button
+                        class="px-4 py-2 border-2 border-amber-800 text-amber-800 rounded-lg hover:bg-amber-800 hover:text-white transition">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div class="mt-6 bg-white rounded-xl shadow-lg p-4">
+            <div class="flex flex-wrap gap-3 items-center">
+                <span class="text-amber-900 font-semibold">Bulk Actions:</span>
+                <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg hover:bg-green-200 transition">✅
+                    Activate Selected</button>
+                <button class="px-4 py-2 bg-red-100 text-red-800 rounded-lg hover:bg-red-200 transition">🚫 Block
+                    Selected</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition">🗑️ Delete
+                    Selected</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg hover:bg-blue-200 transition">📧 Send
+                    Email</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal (Hidden by default) -->
+    <div id="addUserModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6 border-b border-amber-100">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-amber-900">Add New User</h2>
+                    <button onclick="closeAddUserModal()"
+                        class="text-amber-800 hover:text-amber-900 text-2xl">&times;</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-amber-900 font-semibold mb-2">First Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none"
+                                placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-amber-900 font-semibold mb-2">Last Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none"
+                                placeholder="Doe">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-amber-900 font-semibold mb-2">Email Address</label>
+                        <input type="email"
+                            class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none"
+                            placeholder="john.doe@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-amber-900 font-semibold mb-2">Phone Number</label>
+                        <input type="tel"
+                            class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none"
+                            placeholder="+1 234 567 8900">
+                    </div>
+                    <div>
+                        <label class="block text-amber-900 font-semibold mb-2">Role</label>
+                        <select
+                            class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none">
+                            <option>Customer</option>
+                            <option>Manager</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-amber-900 font-semibold mb-2">Status</label>
+                        <select
+                            class="w-full px-4 py-2 border-2 border-amber-200 rounded-lg focus:border-amber-800 focus:outline-none">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-3 pt-4">
+                        <button type="submit"
+                            class="flex-1 px-6 py-3 bg-amber-800 text-white rounded-lg hover:bg-amber-900 transition">Create
+                            User</button>
+                        <button type="button" onclick="closeAddUserModal()"
+                            class="flex-1 px-6 py-3 border-2 border-amber-800 text-amber-800 rounded-lg hover:bg-amber-100 transition">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openAddUserModal() {
+            document.getElementById('addUserModal').classList.remove('hidden');
+        }
+
+        function closeAddUserModal() {
+            document.getElementById('addUserModal').classList.add('hidden');
+        }
+    </script>
+
+    <footer class="bg-headerfooter dark:bg-headerfooterdark dark:text-gray-100" id="about">
+        <div class="container mx-auto px-4 py-4">
+            <div class="grid gap-4 md:grid-cols-4 pb-8">
+                <div>
+                    <h3 class="text-xl">DecoraHub</h3>
+                    <p class="text-left">
+                        Your one-stop destination for stylish, quality furniture that
+                        transforms any space into a masterpiece.
+                    </p>
+                    <div class="py-4">
+                        <i class="fa-brands fa-facebook fa-xl"></i>
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                        <i class="fa-brands fa-x-twitter fa-xl"></i>
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">Quick link</h3>
+                    <div class="grid">
+                        <a href="index.html">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#product">Shop</a>
+                        <a href="#blogs">Blogs</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">Customer Service</h3>
+                    <div class="grid">
+                        <a href="#about">FAQs</a>
+                        <a href="#about">Privacy Policy</a>
+                        <a href="#about">Terms and condition</a>
+                        <a href="#about">Support center</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl">We accept</h3>
+                    <div class="text-3xl">
+                        <i class="fa-brands fa-cc-visa text-blue-600 bg-white"></i>
+                        <i class="fa-brands fa-cc-mastercard text-red-600 bg-white"></i>
+                        <i class="fa-brands fa-cc-apple-pay"></i>
+                        <i class="fa-solid fa-building-columns text-yellow-700 bg-white"></i>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-black h-1 dark:bg-gray-100" />
+            <div>
+                <p class="text-center text-lg">
+                    &copy;2025 DecoraHub All right reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

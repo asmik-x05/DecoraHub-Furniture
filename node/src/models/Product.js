@@ -18,8 +18,8 @@ const productSchema = new mongoose.Schema({
     default: 1,
   },
   price: {
-    type: String,
-    required: [true, "A product must always have a name"],
+    type: Number,
+    required: [true, "A product must always have a Price"],
   },
   imageUrl: {
     type: [String],

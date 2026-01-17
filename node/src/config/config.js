@@ -8,6 +8,11 @@ const config = {
   version: process.env.VERSION || "1.0.1",
   mongodburl: process.env.MONGODB_URL || "",
   jwtsecret: process.env.JWT_SECRET || "KEY",
+  appUrl: process.env.APP_URL || "",
+  khalti: {
+    apiurl: process.env.KHALTI_URL || "",
+    secret: process.env.KHALTI_SECRET_KEY || "",
+  },
 };
 
 export default config;

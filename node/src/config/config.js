@@ -13,6 +13,7 @@ const config = {
     apiurl: process.env.KHALTI_URL || "",
     secret: process.env.KHALTI_SECRET_KEY || "",
   },
+  emailApiKey: process.env.EMAIL_API_KEY || "",
 };
 
 export default config;

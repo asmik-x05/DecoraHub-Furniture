@@ -8,4 +8,17 @@ const loginSchema = z.object({
 
 const registerSchema = userSchema;
 
-export { loginSchema, registerSchema };
+const forgotPasswordSchema = z.object({
+  email: z.email(),
+});
+
+const resetPasswordSchema = z.object({
+  password: z.string(),
+});
+
+export {
+  loginSchema,
+  registerSchema,
+  forgotPasswordSchema,
+  resetPasswordSchema,
+};

@@ -1,5 +1,8 @@
 import bcrypt from "bcryptjs";
 import User from "../models/Users.js";
+import ResetPassword from "../models/ResetPassword.js";
+import sendEmail from "../utils/email.js";
+import config from "../config/config.js";
 
 const login = async (data) => {
   const user = await User.findOne({
@@ -58,12 +61,61 @@ const register = async (data) => {
   };
 };
 
-const forgetPassoword = async (email) => {
+const forgotPassword = async (email) => {
   const user = await User.findOne({ email });
-  if (!user) throw { status: 400, message: "user not found." };
+
+  if (!user) throw { status: 200, message: "If user exists email is sent." };
+
   const token = crypto.randomUUID();
+
+  await ResetPassword.create({
+    userId: user._id,
+    token,
+  });
+
+  // Note: Password reset link is only sent in the email used to create the resend api
+
+  const resetPasswordLink = `${config.appUrl}/api/auth/reset-password?userId=${user._id}&token=${token}`;
+
+  sendEmail(email, {
+    subject: "Reset password link",
+    html: `
+        <a
+          href="${resetPasswordLink}"
+        >
+         Click here to Reset password
+        </a>`,
+  });
+
+  return { message: "Reset password link sent successfully." };
 };
 
-const resetPassword = async (userId, token, password) => {};
+const resetPassword = async (userId, token, password) => {
+  const data = await ResetPassword.findOne({
+    userId,
+    expiresAt: { $gt: Date.now() },
+  }).sort({ createdAt: -1 });
 
-export default { login, register, forgetPassoword };
+  if (!data || data.token != token) {
+    throw { status: 400, message: "Invalid or expired token." };
+  }
+
+  if (data.isUsed) {
+    throw { status: 400, message: "Link already expired or Used." };
+  }
+
+  const salt = bcrypt.genSaltSync(10);
+  const hashedPassword = bcrypt.hashSync(password, salt);
+
+  await User.findByIdAndUpdate(userId, {
+    password: hashedPassword,
+  });
+
+  await ResetPassword.findByIdAndUpdate(data._id, {
+    isUsed: true,
+  });
+
+  return { message: "Password reset successful." };
+};
+
+export default { login, register, forgotPassword, resetPassword };

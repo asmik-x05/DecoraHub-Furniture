@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, "A product must always have a Price"],
   },
-  imageUrl: {
+  imageUrls: {
     type: [String],
   },
   description: {

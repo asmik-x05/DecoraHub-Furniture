@@ -9,4 +9,6 @@ const router = express.Router();
 router.get("/", auth, authorizeRole(ROLE_ADMIN), userController.getUsers);
 router.post("/", auth, authorizeRole(ROLE_ADMIN), userController.createUser);
 
+router.patch("/update-profile", auth, userController.updateProfile);
+
 export default router;

@@ -17,5 +17,14 @@ const getUsers = async (req, res) => {
     res.status(400).send(error?.message);
   }
 };
+const updateProfile = async (req, res) => {
+  try {
+    const data = await userService.updateProfile(req.file, req.user._id);
 
-export default { createUser, getUsers };
+    res.status(200).send(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
+export default { createUser, getUsers, updateProfile };

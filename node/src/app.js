@@ -19,7 +19,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(bodyParser.json());
 
-app.use("/api/users", upload.single("images"), userRoute);
+app.use("/api/user", upload.single("image"), userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/product/", upload.array("images", 5), productRoute);
 app.use("/api/order/", orderRoute);

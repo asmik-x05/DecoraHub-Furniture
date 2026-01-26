@@ -6,7 +6,6 @@ const validate = (Schema) => (req, res, next) => {
     next();
   } catch (error) {
     if (error instanceof ZodError) {
-      console.log(error);
       res.status(400).json(JSON.parse(error));
     }
     next(error);

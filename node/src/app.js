@@ -9,7 +9,7 @@ import userRoute from "./routes/user.route.js";
 import multer from "multer";
 import connectCloudinary from "./config/cloudinary.js";
 import uploadFile from "./utils/fileUploader.js";
-
+import cartRoute from "./routes/cart.route.js";
 const app = express();
 
 connectDb();
@@ -23,6 +23,7 @@ app.use("/api/user", upload.single("image"), userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/product/", upload.array("images", 5), productRoute);
 app.use("/api/order/", orderRoute);
+app.use("/api/cart/", cartRoute);
 
 app.listen(config.port, () => {
   console.log(`server is running .... at port: ${config.port}`);

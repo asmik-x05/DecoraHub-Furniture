@@ -19,6 +19,15 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    name: "E-Commerce API",
+    version: "1.0.0",
+    status: "OK",
+    message: "Welcome to the E-Commerce API",
+  });
+});
+
 app.use("/api/user", upload.single("image"), userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/product/", upload.array("images", 5), productRoute);

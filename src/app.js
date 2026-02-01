@@ -2,6 +2,7 @@ import authRoute from "./routes/auth.route.js";
 import bodyParser from "body-parser";
 import config from "./config/config.js";
 import connectDb from "./config/database.js";
+import cors from "cors";
 import express from "express";
 import orderRoute from "./routes/order.route.js";
 import productRoute from "./routes/product.routes.js";
@@ -16,6 +17,7 @@ connectDb();
 connectCloudinary();
 
 const upload = multer({ storage: multer.memoryStorage() });
+app.use(cors());
 
 app.use(bodyParser.json());
 

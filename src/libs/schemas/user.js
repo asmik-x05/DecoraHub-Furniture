@@ -3,7 +3,7 @@ import z from "zod";
 const addressSchema = z.object({
   city: z.string(),
   province: z.string(),
-  country: z.string(),
+  country: z.string().optional(),
 });
 
 const userSchema = z.object({

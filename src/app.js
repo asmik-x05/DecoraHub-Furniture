@@ -12,6 +12,7 @@ import connectCloudinary from "./config/cloudinary.js";
 import uploadFile from "./utils/fileUploader.js";
 import cartRoute from "./routes/cart.route.js";
 const app = express();
+import blogRoute from "./routes/blog.route.js";
 
 connectDb();
 connectCloudinary();
@@ -35,6 +36,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/product/", upload.array("images", 5), productRoute);
 app.use("/api/order/", orderRoute);
 app.use("/api/cart/", cartRoute);
+app.use("/api/blogs/", upload.single("image"), blogRoute);
 
 app.listen(config.port, () => {
   console.log(`server is running .... at port: ${config.port}`);

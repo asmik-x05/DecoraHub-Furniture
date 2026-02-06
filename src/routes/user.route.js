@@ -11,4 +11,20 @@ router.post("/", auth, authorizeRole(ROLE_ADMIN), userController.createUser);
 
 router.patch("/update-profile", auth, userController.updateProfile);
 
+router.get("/profile", auth, userController.getLoggedInUser);
+
+router.get("/:id", auth, authorizeRole(ROLE_ADMIN), userController.getUserById);
+
+router.put("/:id", userController.updateUser);
+
+router.delete("/:id", authorizeRole(ROLE_ADMIN), userController.deleteUser);
+
+router.put(
+  "/:id/roles",
+  auth,
+  authorizeRole(ROLE_ADMIN),
+
+  userController.updateUserRoles,
+);
+
 export default router;

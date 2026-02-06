@@ -26,5 +26,61 @@ const updateProfile = async (req, res) => {
     res.status(error.status || 400).send(error?.message);
   }
 };
+const getUserById = async (req, res) => {
+  try {
+    const data = await userService.getUserById(req.params.id);
 
-export default { createUser, getUsers, updateProfile };
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
+};
+
+const updateUser = async (req, res) => {
+  try {
+    const data = await userService.updateUser(
+      req.params.id,
+      req.body,
+      req.user,
+    );
+
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const data = await userService.deleteUser(req.params.id);
+
+    res.json(data);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
+};
+
+const getLoggedInUser = async (req, res) => {
+  try {
+    const data = await userService.getUserById(req.user._id);
+
+    res.json(data);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
+};
+
+const updateUserRoles = async (req, res) => {
+  try {
+    const data = await userService.updateUserRoles(
+      req.params.id,
+      req.body.roles,
+    );
+
+    res.json(data);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
+};
+
+export default { createUser, getUsers, updateProfile, getUserById, updateUser, deleteUser, getLoggedInUser, updateUserRoles };

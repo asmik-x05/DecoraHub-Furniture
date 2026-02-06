@@ -29,6 +29,9 @@ const getOrderById = async (id) => {
 
   return order;
 };
+const updateOrderStatus = async (id, status) => {
+  return await Order.findByIdAndUpdate(id, { status }, { new: true });
+};
 
 const getOrderByUser = async (userId) => {
   const order = await Order.find({ user: userId })
@@ -54,7 +57,7 @@ const cancelOrder = async (user, id) => {
 
   return await Order.findByIdAndUpdate(
     id,
-    { status: ORDER_STATUS_CANCLED },
+    { status: ORDER_STATUS_CANCELED },
     { new: true },
   );
 };
@@ -122,4 +125,5 @@ export default {
   orderPaymentViaKhalti,
   confirmOrderPayment,
   orderViaCash,
+  updateOrderStatus,
 };

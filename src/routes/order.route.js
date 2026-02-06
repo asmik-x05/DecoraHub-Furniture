@@ -31,6 +31,12 @@ router.get(
   authorizeRole(ROLE_ADMIN),
   orderController.getOrderById,
 );
+router.put(
+  "/:id/status",
+  auth,
+  authorizeRole(ROLE_ADMIN),
+  orderController.updateOrderStatus,
+);
 
 router.put("/:id", auth, orderController.cancelOrder);
 

@@ -21,8 +21,9 @@ const getUsers = async (req, res) => {
 const updateProfile = async (req, res) => {
   try {
     const data = await userService.updateProfile(req.file, req.user._id);
-
-    res.status(200).send(data);
+    const token = createJWT(data);
+    res.cookie("authToken", token, { maxAge: 86400 * 1000 });
+    res.json({ ...data, token });
   } catch (error) {
     res.status(error.status || 400).send(error?.message);
   }

@@ -31,7 +31,16 @@ const getUserById = async (id) => {
       message: "User not found.",
     };
 
-  return user;
+  return {
+    _id: user._id,
+    Name: user.name,
+    Email: user.email,
+    Phone: user.phone,
+    Address: user.address,
+    Role: user.roles,
+    isActive: user.isActive,
+    profileImgUrl: user.profileImgUrl,
+  };
 };
 
 const updateUser = async (id, data, authUser) => {
@@ -73,4 +82,12 @@ const updateUserRoles = async (id, roles) => {
   return await User.findByIdAndUpdate(id, { roles }, { new: true });
 };
 
-export default { createUser, getUsers, updateProfile, getUserById, updateUser, deleteUser, updateUserRoles };
+export default {
+  createUser,
+  getUsers,
+  updateProfile,
+  getUserById,
+  updateUser,
+  deleteUser,
+  updateUserRoles,
+};

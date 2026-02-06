@@ -35,7 +35,7 @@ const getUserById = async (id) => {
 };
 
 const updateUser = async (id, data, authUser) => {
-  if (authUser._id !== id && !authUser.roles.includes(ROLE_ADMIN))
+  if (authUser._id !== id && !authUser.Role.includes(ROLE_ADMIN))
     throw {
       status: 403,
       message: "Access denied.",

@@ -1,4 +1,5 @@
 import userService from "../services/user.service.js";
+import { createJWT } from "../utils/jwt.js";
 
 const createUser = async (req, res) => {
   try {

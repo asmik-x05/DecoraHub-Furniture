@@ -15,9 +15,9 @@ router.get("/profile", auth, userController.getLoggedInUser);
 
 router.get("/:id", auth, authorizeRole(ROLE_ADMIN), userController.getUserById);
 
-router.put("/:id", userController.updateUser);
+router.put("/:id",auth, userController.updateUser);
 
-router.delete("/:id", authorizeRole(ROLE_ADMIN), userController.deleteUser);
+router.delete("/:id", auth, authorizeRole(ROLE_ADMIN), userController.deleteUser);
 
 router.put(
   "/:id/roles",

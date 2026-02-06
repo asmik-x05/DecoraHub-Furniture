@@ -41,7 +41,7 @@ const updateUser = async (id, data, authUser) => {
       message: "Access denied.",
     };
 
-  return await User.findByIdAndUpdate(
+  const updatedUser = await User.findByIdAndUpdate(
     id,
     {
       name: data?.name,
@@ -51,6 +51,16 @@ const updateUser = async (id, data, authUser) => {
     },
     { new: true },
   );
+
+  return {
+    _id: updatedUser._id,
+    Name: updatedUser.name,
+    Email: updatedUser.email,
+    Phone: updatedUser.phone,
+    Address: updatedUser.address,
+    Role: updatedUser.roles,
+    isActive: updatedUser.isActive,
+  };
 };
 
 const deleteUser = async (id) => {

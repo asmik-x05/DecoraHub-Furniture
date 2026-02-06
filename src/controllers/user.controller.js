@@ -30,7 +30,7 @@ const getUserById = async (req, res) => {
   try {
     const data = await userService.getUserById(req.params.id);
 
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (error) {
     res.status(400).send(error?.message);
   }
@@ -44,7 +44,9 @@ const updateUser = async (req, res) => {
       req.user,
     );
 
-    res.status(201).json(data);
+    const token = createJWT(data);
+    res.cookie("authToken", token, { maxAge: 86400 * 1000 });
+    res.json({ ...data, token });
   } catch (error) {
     res.status(error.status || 400).send(error?.message);
   }
@@ -83,4 +85,13 @@ const updateUserRoles = async (req, res) => {
   }
 };
 
-export default { createUser, getUsers, updateProfile, getUserById, updateUser, deleteUser, getLoggedInUser, updateUserRoles };
+export default {
+  createUser,
+  getUsers,
+  updateProfile,
+  getUserById,
+  updateUser,
+  deleteUser,
+  getLoggedInUser,
+  updateUserRoles,
+};

@@ -75,6 +75,16 @@ const rateProduct = async (req, res) => {
   }
 };
 
+const getTotalCount = async (req, res) => {
+  try {
+    const data = await productService.getTotalCount();
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
 export default {
   getProduct,
   getProductsById,
@@ -82,4 +92,5 @@ export default {
   updateProduct,
   deleteProduct,
   rateProduct,
+  getTotalCount,
 };

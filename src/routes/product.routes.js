@@ -40,4 +40,6 @@ router.post(
   productController.rateProduct,
 );
 
+router.get("/total", productController.getTotalCount);
+
 export default router;

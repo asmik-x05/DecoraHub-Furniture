@@ -82,6 +82,9 @@ const rateProduct = async (productId, userId, data) => {
   );
   return updatedRating;
 };
+const getTotalCount = async () => {
+  return await Product.countDocuments();
+};
 
 export default {
   getProducts,
@@ -90,4 +93,5 @@ export default {
   updateProduct,
   deleteProduct,
   rateProduct,
+  getTotalCount,
 };

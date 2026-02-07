@@ -8,6 +8,10 @@ import validate from "../middlewares/validator.js";
 
 const router = express.Router();
 
+router.get("/brands", productController.getBrands);
+
+router.get("/categories", productController.getCategories);
+
 router.delete(
   "/:id",
   auth,

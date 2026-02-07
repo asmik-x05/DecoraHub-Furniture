@@ -3,6 +3,8 @@ import Product from "../models/Product.js";
 import Rating from "../models/Rating.js";
 import uploadFile from "../utils/fileUploader.js";
 import { ORDER_STATUS_DELIVERED } from "../constants/orderStatuses.js";
+import promptAI from "../utils/ai.js";
+import { PRODUCT_DESCRIPTION_PROMPT } from "../constants/prompt.js";
 
 const getProducts = async (query) => {
   const { category, brand, name, min, max, limit, offset } = query;
@@ -26,7 +28,12 @@ const getProductsById = (id) => {
 const createProduct = async (data, files) => {
   const uploadedFiles = await uploadFile(files);
   const imageUrls = uploadedFiles.map((item) => item.url);
-  return await Product.create({ ...data, imageUrls });
+  const promptMessage = PRODUCT_DESCRIPTION_PROMPT.replace("%s", data.name)
+    .replace("%s", data.brand)
+    .replace("%s", data.category);
+
+  const description = data.description ?? (await promptAI(promptMessage));
+  return await Product.create({ ...data, imageUrls, description });
 };
 
 const updateProduct = async (id, data) => {

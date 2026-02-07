@@ -14,7 +14,7 @@ const createOrder = async (data, userId) => {
 const getOrder = async () => {
   return await Order.find()
     .populate("user", "name email phone")
-    .populate("orderIteam.product", "name brand price imageUrl description");
+    .populate("orderIteam.product", "name brand price imageUrls description");
 };
 
 const getOrderById = async (id) => {
@@ -37,7 +37,7 @@ const getOrderByUser = async (userId) => {
   const order = await Order.find({ user: userId })
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
-    .populate("orderIteam.product", "name brand price imageUrl description");
+    .populate("orderIteam.product", "name brand price imageUrls description");
   if (!order)
     throw {
       status: 404,

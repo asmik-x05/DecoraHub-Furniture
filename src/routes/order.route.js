@@ -38,7 +38,7 @@ router.put(
   orderController.updateOrderStatus,
 );
 
-router.put("/:id", auth, orderController.cancelOrder);
+router.put("/:id/cancel", auth, orderController.cancelOrder);
 
 router.post(
   "/:id/payment/khalti",

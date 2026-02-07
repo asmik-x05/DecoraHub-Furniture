@@ -28,6 +28,7 @@ const login = async (data) => {
     Address: user.address,
     Role: user.roles,
     isActive: user.isActive,
+    profileImgUrl: user?.profileImgUrl,  
   };
 };
 

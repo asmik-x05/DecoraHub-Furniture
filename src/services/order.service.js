@@ -14,13 +14,13 @@ const createOrder = async (data, userId) => {
 const getOrder = async () => {
   return await Order.find()
     .populate("user", "name email phone")
-    .populate("orderIteam.product", "name brand price imageUrls description");
+    .populate("orderIteam.product", "name brand price imageUrls description category");
 };
 
 const getOrderById = async (id) => {
   const order = await Order.findById(id)
     .populate("user", "name email phone")
-    .populate("orderIteam.product", "name brand price imageUrl description");
+    .populate("orderIteam.product", "name brand price imageUrls description category");
   if (!order)
     throw {
       status: 404,
@@ -37,7 +37,7 @@ const getOrderByUser = async (userId) => {
   const order = await Order.find({ user: userId })
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
-    .populate("orderIteam.product", "name brand price imageUrls description");
+    .populate("orderIteam.product", "name brand price imageUrls description category");
   if (!order)
     throw {
       status: 404,

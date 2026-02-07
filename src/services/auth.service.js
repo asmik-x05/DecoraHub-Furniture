@@ -28,7 +28,7 @@ const login = async (data) => {
     Address: user.address,
     Role: user.roles,
     isActive: user.isActive,
-    profileImgUrl: user?.profileImgUrl,  
+    profileImgUrl: user?.profileImgUrl,
   };
 };
 
@@ -76,7 +76,7 @@ const forgotPassword = async (email) => {
 
   // Note: Password reset link is only sent in the email used to create the resend api
 
-  const resetPasswordLink = `${config.appUrl}/api/auth/reset-password?userId=${user._id}&token=${token}`;
+  const resetPasswordLink = `${config.appUrl}/reset-password?userId=${user._id}&token=${token}`;
 
   sendEmail(email, {
     subject: "Reset password link",

@@ -50,7 +50,6 @@ const orderSchema = new mongoose.Schema({
     },
     street: {
       type: String,
-      required: [true, "address must be specified to place a order"],
     },
     country: { type: String, default: "Nepal" },
   },

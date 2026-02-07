@@ -13,7 +13,7 @@ router.patch("/update-profile", auth, userController.updateProfile);
 
 router.get("/profile", auth, userController.getLoggedInUser);
 
-router.get("/:id", auth, authorizeRole(ROLE_ADMIN), userController.getUserById);
+router.get("/:id", auth, userController.getUserById);
 
 router.put("/:id",auth, userController.updateUser);
 

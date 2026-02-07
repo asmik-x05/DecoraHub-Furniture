@@ -13,13 +13,24 @@ const getUsers = async () => {
 const updateProfile = async (file, id) => {
   const uploadedFile = await uploadFile([file]);
 
-  return await User.findByIdAndUpdate(
+  const updatedUser = await User.findByIdAndUpdate(
     id,
     {
       profileImgUrl: uploadedFile[0].url,
     },
     { new: true },
   );
+
+  return {
+    _id: updatedUser._id,
+    Name: updatedUser.name,
+    Email: updatedUser.email,
+    Phone: updatedUser.phone,
+    Address: updatedUser.address,
+    Role: updatedUser.roles,
+    isActive: updatedUser.isActive,
+    profileImgUrl: updatedUser?.profileImgUrl,
+  };
 };
 
 const getUserById = async (id) => {
@@ -39,7 +50,7 @@ const getUserById = async (id) => {
     Address: user.address,
     Role: user.roles,
     isActive: user.isActive,
-    profileImgUrl: user.profileImgUrl,
+    profileImgUrl: user?.profileImgUrl,
   };
 };
 
@@ -69,6 +80,7 @@ const updateUser = async (id, data, authUser) => {
     Address: updatedUser.address,
     Role: updatedUser.roles,
     isActive: updatedUser.isActive,
+    profileImgUrl: updatedUser?.profileImgUrl,
   };
 };
 

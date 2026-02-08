@@ -61,4 +61,11 @@ router.post(
   orderController.orderViaCash,
 );
 
+router.post(
+  "/:id/payment/stripe",
+  auth,
+  authorizeRole(ROLE_USER),
+  orderController.orderPaymentViaStripe,
+);
+
 export default router;

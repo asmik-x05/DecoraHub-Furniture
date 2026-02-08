@@ -18,12 +18,14 @@ const getOrder = async (req, res) => {
   }
 };
 
-const getOrderByUser = async (req, res) => {
+  const getOrderByUser = async (req, res) => {
+  const status = req.query?.status;
+
   try {
-    const orderList = await orderService.getOrderByUser(req.user._id);
-    res.json(orderList);
+    const data = await orderService.getOrderByUser(status, req.user._id);
+    res.json(data);
   } catch (error) {
-    res.status(error.status || 400).send(error?.message);
+    res.status(400).send(error?.message);
   }
 };
 
@@ -88,6 +90,16 @@ const orderViaCash = async (req, res) => {
   }
 };
 
+const orderPaymentViaStripe = async (req, res) => {
+  try {
+    const data = await orderService.orderPaymentViaStripe(req.params.id);
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
 export default {
   createOrder,
   getOrder,
@@ -98,4 +110,5 @@ export default {
   confirmOrderPayment,
   orderViaCash,
   updateOrderStatus,
+  orderPaymentViaStripe,
 };

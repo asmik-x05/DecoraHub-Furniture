@@ -5,7 +5,7 @@ import {
 import { ROLE_ADMIN } from "../constants/roles.js";
 import Order from "../models/Order.js";
 import Payment from "../models/Payment.js";
-import { paymentViaKhalti } from "../utils/payment.js";
+import { paymentViaKhalti, payViaStripe } from "../utils/payment.js";
 
 const createOrder = async (data, userId) => {
   return await Order.create({ ...data, user: userId });
@@ -39,21 +39,18 @@ const updateOrderStatus = async (id, status) => {
   return await Order.findByIdAndUpdate(id, { status }, { new: true });
 };
 
-const getOrderByUser = async (userId) => {
-  const order = await Order.find({ user: userId })
+const getOrderByUser = async (status, userId) => {
+  let filter = { user: userId };
+
+  if (status) filter.status = status;
+
+  return await Order.find(filter)
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
     .populate(
       "orderIteam.product",
       "name brand price imageUrls description category",
     );
-  if (!order)
-    throw {
-      status: 404,
-      message: "!! you havent created any order Yet !!",
-    };
-
-  return order;
 };
 
 const cancelOrder = async (user, id) => {
@@ -82,6 +79,7 @@ const orderPaymentViaKhalti = async (id) => {
   await Order.findByIdAndUpdate(id, { payment: orderPayment._id });
 
   return await paymentViaKhalti({
+    id,
     amount: order.totalPrice,
     purchaseOrderId: order.orderNumber,
     purchaseOrderName: order.orderIteam[0].product.name,
@@ -125,6 +123,28 @@ const orderViaCash = async (id) => {
   );
 };
 
+// pay via stripe
+
+const orderPaymentViaStripe = async (id) => {
+  const order = await getOrderById(id);
+
+  const orderPayment = await Payment.create({
+    method: "CARD",
+    amount: order.totalPrice,
+  });
+
+  await Order.findByIdAndUpdate(id, {
+    payment: orderPayment._id,
+  });
+
+  return await payViaStripe({
+    amount: order.totalPrice,
+    orderId: id,
+    orderName: order.orderIteam[0].product.name,
+    customer: order.user,
+  });
+};
+
 export default {
   createOrder,
   getOrder,
@@ -135,4 +155,5 @@ export default {
   confirmOrderPayment,
   orderViaCash,
   updateOrderStatus,
+  orderPaymentViaStripe,
 };
